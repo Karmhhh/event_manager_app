@@ -6,14 +6,14 @@ export const Layout = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Stack direction={"row"} spacing={5}>
-          <Typography variant="h3" component={"b"}>
+        <Stack direction={"row"} spacing={3} alignItems={'center'}>
+          <Typography variant="h4" component={"b"}>
             Art
           </Typography>
-          <Typography variant="h4" component={"i"}>
+          <Typography variant="h6" component={"i"}>
             is for
           </Typography>
-          <Typography variant="h3" component={"b"}>
+          <Typography variant="h4" component={"b"}>
             Everyone.
           </Typography>
         </Stack>
