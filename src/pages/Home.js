@@ -1,8 +1,14 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import ClientImg from "../Assets/EllipseClient.png";
 import ManagerImg from "../Assets/EllipseManager.png";
 import ArtistImg from "../Assets/EllipseArtist.png";
+import ClientImgo from "../Assets/Ellipseclient.png";
+import ManagerImgo from "../Assets/Ellipsemanager.png";
+import ArtistImgo from "../Assets/Ellipseartist.png";
+
+import { ImageOnOver } from "./Components/ImageOnOver";
 export const Home = () => {
   return (
     <>
@@ -20,13 +26,15 @@ export const Home = () => {
           alignItems={"baseline"}
         >
           <Link to="/Client">
-            <img src={ClientImg} width={"75%"}></img>
+          <ImageOnOver onTrue={ClientImgo} onFalse={ClientImg}  widthProp={'75%'} ></ImageOnOver>
           </Link>
           <Link to="/ManagerEvent">
-            <img src={ManagerImg} width={"100%"}></img>
-          </Link>
+          
+          <ImageOnOver onTrue={ManagerImgo} onFalse={ManagerImg}  widthProp={'100%'} ></ImageOnOver>
+           </Link>
           <Link to="/Artist">
-            <img src={ArtistImg} width={"75%"}></img>
+          
+          <ImageOnOver onTrue={ArtistImgo} onFalse={ArtistImg} widthProp={'75%'} ></ImageOnOver>
           </Link>
         </Stack>
       </Stack>
