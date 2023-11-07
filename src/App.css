@@ -25,9 +25,9 @@
 }
 
 .App-footer {
-  min-height: 5vh;
+  min-height: 3vh;
   width: 100%;
-  text-align: center;
+  text-align: right;
   position: absolute;
   bottom: 0;
 }
