@@ -20,13 +20,13 @@ export const Home = () => {
           alignItems={"baseline"}
         >
           <Link to="/Client">
-            <img src={ClientImg} width={"60%"}></img>
+            <img src={ClientImg} width={"75%"}></img>
           </Link>
           <Link to="/ManagerEvent">
-            <img src={ManagerImg} width={"80%"}></img>
+            <img src={ManagerImg} width={"100%"}></img>
           </Link>
           <Link to="/Artist">
-            <img src={ArtistImg} width={"60%"}></img>
+            <img src={ArtistImg} width={"75%"}></img>
           </Link>
         </Stack>
       </Stack>
