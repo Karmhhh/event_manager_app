@@ -20,6 +20,9 @@ export const Layout = () => {
       </header>
 
       <Outlet />
+      <footer className="App-footer">
+        Made with 🖤 by Partenope Students.
+      </footer>
     </div>
   );
 };
