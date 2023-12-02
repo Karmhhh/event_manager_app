@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 function ResponsiveAppBar() {
   const [isAuth, setIsAuth] = React.useState(false);
-  const pages = ["Home", "Catalog", "Contacts"];
+  const pages = [{name: "Home"}, {name: "Catalog"}, {name: "Contacts"}];
   const settings = [{name: "Profile", action: function() { console.log("profile")}}, {name: "Account", action: function() { console.log("Account")}}, {name: "Logout", action: function() { setIsAuth(false)}}];
   
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -91,12 +91,12 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <Link
-                  key={page}
+                  key={page.name}
                   style={{ textDecoration: "none", color: "black" }}
-                  to={`/${page}`}
+                  to={`/${page.name}`}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -124,11 +124,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Link
                 style={{ textDecoration: "none" }}
-                to={`/${page}`}
-                key={page}
+                to={`/${page.name}`}
+                key={page.name}
               >
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  {page}
+                  {page.name}
                 </Button>
               </Link>
             ))}
