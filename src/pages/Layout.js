@@ -14,10 +14,12 @@ export const Layout = () => {
       </header>
 
       <Outlet />
-
-      <footer className="App-footer">
-        {/* Made with 🖤 by Partenope Students. */}
+      {/* 
+      <footer className="App-footer" >
+        hchgv
+        Made with 🖤 by Partenope Students. 
       </footer>
+      */}
     </Stack>
   );
 };

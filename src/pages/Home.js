@@ -4,6 +4,7 @@ import { useState } from "react";
 import img1 from "../Assets/ArtGalleryimg1.jpg";
 import img2 from "../Assets/ArtGalleryimg2.jpg";
 import img3 from "../Assets/ArtGalleryimg3.jpg";
+import img4 from "../Assets/Ellipseartist.png";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -22,7 +23,7 @@ const images = [
 
 export const Home = () => {
   return (
-    <Stack style={{ height: "80vh" }}>
+    <Stack  spacing={3} style={{ height: "80vh" }}>
       <Slide
         autoplay={true}
         onChange={function noRefCheck() {}}
@@ -40,6 +41,32 @@ export const Home = () => {
           </div>
         ))}
       </Slide>
+      <Box sx={{  display: { xs: "none", md: "block" } }}>
+        <Grid container spacing={2} direction={"row"} className="row-img">
+          <Grid item lg={4}>
+            <img src={img1} alt="img" />
+          </Grid>
+          <Grid item lg={7}>
+            <span>For Artist</span>
+          </Grid>{" "}
+        </Grid>
+        <Grid container spacing={2} direction={"row"} className="row-img">
+          <Grid item lg={7}>
+            <span>For Promoter</span>
+          </Grid>{" "}
+          <Grid item lg={4}>
+            <img src={img2} alt="img" />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} direction={"row"} className="row-img">
+          <Grid item lg={4}>
+            <img src={img3} alt="img" />
+          </Grid>
+          <Grid item lg={7}>
+            <span>For Everyone</span>
+          </Grid>{" "}
+        </Grid>
+      </Box>
     </Stack>
   );
 };
