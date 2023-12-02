@@ -168,7 +168,7 @@ function ResponsiveAppBar() {
           ) : (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Go to Login">
-                <IconButton sx={{ p: 0 }} onClick={()=>{setIsAuth(true)}}>
+                <IconButton sx={{ p: 1 }} onClick={()=>{setIsAuth(true)}}>
                   <LoginIcon alt="Login" style={{ color: "white" }}></LoginIcon>
                 </IconButton>
               </Tooltip>
