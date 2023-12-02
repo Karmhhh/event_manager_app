@@ -10,9 +10,16 @@ import { NoPage } from "./pages/NoPages";
 import { ManagerEvent } from "./pages/ManagerEvent";
 import { Client } from "./pages/Client";
 import { Artist } from "./pages/Artist";
+import { ShowMoreEvent } from "./pages/ShowMoreEvent";
+import { PayPage } from "./pages/PayPage";
+import { Contacts } from "./pages/Contacts";
+import { Catalog } from "./pages/Catalog";
+import {RequestFormEventManager} from "./pages/Modules/Forms/RequestFormEventManager"
+import {RequestFormEventArtist} from "./pages/Modules/Forms/RequestFormArtist"
 
 export default function App() {
   return (
+    //Usare il Router per consentire la navigazione tra le pagine all'interno della piattaforma
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -20,6 +27,14 @@ export default function App() {
           <Route path="/Client" element={<Client />} />
           <Route path="/ManagerEvent" element={<ManagerEvent />} />
           <Route path="/Artist" element={<Artist />} />
+          <Route path="/ShowMoreEvent" element={<ShowMoreEvent />} />
+          <Route path="/PayPage" element={<PayPage />} />
+          <Route path="/Contacts" element={<Contacts />} />
+          <Route path="/Catalog" element={<Catalog />} />
+          <Route path="/RequestArtist" element={<RequestFormEventArtist />} />
+          <Route path="/RequestManager" element={<RequestFormEventManager />} />
+          <Route path="/Home" element={<Home />} />
+       
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
