@@ -1,19 +1,23 @@
 import { Outlet } from "react-router";
 import "../App.css";
-import {  Stack, Typography } from "@mui/material";
-import ResponsiveAppBar from "./Components/AppBar"
+import { Box, Paper, Stack, Typography } from "@mui/material";
+import ResponsiveAppBar from "./Components/AppBar";
+
 export const Layout = () => {
   return (
-    <div className="App">
+    <Stack className="App">
       <header className="App-header">
-      
-        <ResponsiveAppBar/>
+        <ResponsiveAppBar />
+        {/* <Typography component={"i"} variant="h3" textAlign={"center"}>
+          ArtEvents
+        </Typography> */}
       </header>
 
       <Outlet />
+
       <footer className="App-footer">
-        Made with 🖤 by Partenope Students.
+        {/* Made with 🖤 by Partenope Students. */}
       </footer>
-    </div>
+    </Stack>
   );
 };

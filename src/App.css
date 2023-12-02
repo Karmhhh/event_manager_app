@@ -1,7 +1,23 @@
 .App {
   text-align: center;
+  
+}
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 500px;
 }
 
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  backdrop-filter: blur(100px);
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -18,12 +34,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
 }
 
 .App-footer {
   min-height: 3vh;
+  max-height: 10vh;
   width: 100%;
   text-align: right;
   position: absolute;

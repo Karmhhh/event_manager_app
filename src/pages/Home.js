@@ -1,43 +1,45 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import ClientImg from "../Assets/EllipseClient.png";
-import ManagerImg from "../Assets/EllipseManager.png";
-import ArtistImg from "../Assets/EllipseArtist.png";
-import ClientImgo from "../Assets/Ellipseclient.png";
-import ManagerImgo from "../Assets/Ellipsemanager.png";
-import ArtistImgo from "../Assets/Ellipseartist.png";
+import img1 from "../Assets/ArtGalleryimg1.jpg";
+import img2 from "../Assets/ArtGalleryimg2.jpg";
+import img3 from "../Assets/ArtGalleryimg3.jpg";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
-import { ImageOnOver } from "./Components/ImageOnOver";
+const images = [
+  {
+    title:
+      " “L'arte non ha epoca. E' l'emozione che dorme su guanciali d'eternità.” ",
+    url: img1,
+  },
+  { title: " “All'opera si conosce il maestro.” ", url: img2 },
+  {
+    title: " “L'arte è fatta per disturbare, la scienza per rassicurare.” ",
+    url: img3,
+  },
+];
+
 export const Home = () => {
   return (
-    <>
-      <Stack margin={3} spacing={5} justifyContent={"center"}>
-        <div>
-          <Typography variant="h5" component={"b"}>
-            Hi,
-          </Typography>
-          <Typography variant="h6">Who are you?</Typography>
-        </div>
-
-        <Stack
-          direction={"row"}
-          justifyContent={"space-around"}
-          alignItems={"baseline"}
-        >
-          <Link to="/Client">
-          <ImageOnOver onTrue={ClientImgo} onFalse={ClientImg}  widthProp={'75%'} ></ImageOnOver>
-          </Link>
-          <Link to="/ManagerEvent">
-          
-          <ImageOnOver onTrue={ManagerImgo} onFalse={ManagerImg}  widthProp={'100%'} ></ImageOnOver>
-           </Link>
-          <Link to="/Artist">
-          
-          <ImageOnOver onTrue={ArtistImgo} onFalse={ArtistImg} widthProp={'75%'} ></ImageOnOver>
-          </Link>
-        </Stack>
-      </Stack>
-    </>
+    <Stack style={{ height: "80vh" }}>
+      <Slide
+        autoplay={true}
+        onChange={function noRefCheck() {}}
+        onStartChange={function noRefCheck() {}}
+      >
+        {images.map((img) => (
+          <div key={img.title} className="each-slide-effect">
+            <div
+              style={{
+                backgroundImage: `url(${img.url})`,
+              }}
+            >
+              <span>{img.title}</span>
+            </div>
+          </div>
+        ))}
+      </Slide>
+    </Stack>
   );
 };
