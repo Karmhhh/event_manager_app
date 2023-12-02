@@ -7,20 +7,23 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import SettingsIcon from "@mui/icons-material/Settings";
+import LoginIcon from "@mui/icons-material/Login";
+import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "Catalog", "Contacts"];
-const settings = ["Profile", "Account", "Logout"];
 
 function ResponsiveAppBar() {
+  const [isAuth, setIsAuth] = React.useState(false);
+  const pages = ["Home", "Catalog", "Contacts"];
+  const settings = [{name: "Profile", action: function() { console.log("profile")}}, {name: "Account", action: function() { console.log("Account")}}, {name: "Logout", action: function() { setIsAuth(false)}}];
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -37,7 +40,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{background:'black'}}>
+    <AppBar position="static" style={{ background: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -54,7 +57,6 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            
             Art is for Everyone.
           </Typography>
 
@@ -87,18 +89,20 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-                 {pages.map((page) => (
-              <Link key={page} style={{textDecoration:'none',color:'black'}} to={`/${page}`} >
-                 <MenuItem  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-            
-              </Link>
-            ))}
-           
+              {pages.map((page) => (
+                <Link
+                  key={page}
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/${page}`}
+                >
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
             </Menu>
           </Box>
-        
+
           <Typography
             variant="h5"
             noWrap
@@ -118,7 +122,11 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link style={{textDecoration:'none'}} to={`/${page}`} key={page}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/${page}`}
+                key={page}
+              >
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
                   {page}
                 </Button>
@@ -126,35 +134,46 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
+          {isAuth ? (
+           
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Avatar" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          <Tooltip title="Open Avatar">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar style={{ color: "white" }} alt="Your Avatar" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "45px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting.name} onClick={()=>setting.action()}>
+                <Typography textAlign="center">{setting.name}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+          ) : (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Go to Login">
+                <IconButton sx={{ p: 0 }} onClick={()=>{setIsAuth(true)}}>
+                  <LoginIcon alt="Login" style={{ color: "white" }}></LoginIcon>
+                </IconButton>
+              </Tooltip>
+            </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
