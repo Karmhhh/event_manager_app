@@ -23,7 +23,7 @@ const images = [
 
 export const Home = () => {
   return (
-    <Stack  spacing={3} style={{ height: "80vh" }}>
+    <Stack spacing={3} style={{ height: "80vh" }}>
       <Slide
         autoplay={true}
         onChange={function noRefCheck() {}}
@@ -33,7 +33,7 @@ export const Home = () => {
           <div key={img.title} className="each-slide-effect">
             <div
               style={{
-                backgroundImage: `url(${img.url})`,
+                backgroundImage: `url(${img.url})`, backgroundSize: 'cover'
               }}
             >
               <span>{img.title}</span>
@@ -41,7 +41,8 @@ export const Home = () => {
           </div>
         ))}
       </Slide>
-      <Box sx={{  display: { xs: "none", md: "block" } }}>
+      {/* web */}
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
         <Grid container spacing={2} direction={"row"} className="row-img">
           <Grid item lg={4}>
             <img src={img1} alt="img" />
@@ -65,6 +66,58 @@ export const Home = () => {
           <Grid item lg={7}>
             <span>For Everyone</span>
           </Grid>{" "}
+        </Grid>
+      </Box>
+
+      {/* mobile */}
+      <Box sx={{ display: { xs: "block", md: "none" } }}>
+        <Grid
+          container
+          spacing={2}
+          direction={"row"}
+          className="row-img-mobile"
+        >
+          <Grid item xs={7} style={{ background: `url(${img1})` , height:'10rem', backgroundSize: 'cover'}}>
+           
+          </Grid>
+          <Grid item xs={4}>
+          <span>
+              <Typography component={"i"} variant={"h6"}>
+                For Artist
+              </Typography>
+            </span>
+          </Grid>{" "}
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction={"row"}
+          className="row-img-mobile"
+        >
+       
+          <Grid item xs={4}>   <span>
+              <Typography component={"i"} variant={"h6"}>
+                For Promoters
+              </Typography>
+            </span></Grid>
+          <Grid item xs={7} style={{ background: `url(${img2})` , height:'10rem', backgroundSize: 'cover'}}>
+         
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction={"row"}
+          className="row-img-mobile"
+        >
+          <Grid item xs={7} style={{ background: `url(${img3})` ,height:'10rem', backgroundSize: 'cover'}}>
+         
+          </Grid>
+          <Grid item xs={4}>   <span>
+              <Typography component={"i"} variant={"h6"}>
+                For Everyone
+              </Typography>
+            </span></Grid>{" "}
         </Grid>
       </Box>
     </Stack>

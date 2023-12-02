@@ -6,16 +6,38 @@
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 500px;
+  height: 30rem;
 }
 .row-img {
   margin: 3rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgb(38, 38, 26);
   background-size: cover;
   height: 30rem;
   width: 100%;
+}
+.row-img-mobile {
+  display: flex;
+  margin: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(38, 38, 26);
+  background-size: cover;
+  height: 10rem;
+  width: 100%;
+}
+.row-img-mobile span {
+  color: aliceblue;
+  padding: 20px;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+}
+
+.row-img-mobile img {
+  height: 7rem;
 }
 .row-img img {
   height: 30rem;
@@ -39,6 +61,7 @@
   width: 100%;
   font-style: italic;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -51,7 +74,6 @@
 }
 
 .App-header {
-  min-height: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
