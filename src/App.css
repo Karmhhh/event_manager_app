@@ -11,7 +11,7 @@
 .row-img {
   margin: 3rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rgb(38, 38, 26);
   background-size: cover;
   height: 30rem;
@@ -47,7 +47,6 @@
   color: aliceblue;
   padding: 20px;
   font-size: calc(10px + 2vmin);
-  backdrop-filter: blur(100px);
   text-align: center;
   width: 100%;
   font-style: italic;
