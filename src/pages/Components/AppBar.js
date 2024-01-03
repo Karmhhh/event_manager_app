@@ -94,6 +94,7 @@ function ResponsiveAppBar() {
                   key={page.name}
                   style={{ textDecoration: "none", color: "black" }}
                   to={`/${page.name}`}
+                  
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.name}</Typography>

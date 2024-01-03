@@ -18,6 +18,8 @@ import {RequestFormEventManager} from "./pages/Modules/Forms/RequestFormEventMan
 import {RequestFormEventArtist} from "./pages/Modules/Forms/RequestFormArtist"
 import { LoginClients, LoginPromoters } from "./pages/Modules/Forms/Login";
 import { SignUpClients, SignUpPromoters } from "./pages/Modules/Forms/Signup";
+import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
+
 export default function App() {
   return (
     //Usare il Router per consentire la navigazione tra le pagine all'interno della piattaforma
@@ -35,14 +37,16 @@ export default function App() {
           <Route path="/RequestArtist" element={<RequestFormEventArtist />} />
           <Route path="/RequestManager" element={<RequestFormEventManager />} />
           <Route path="/Home" element={<Home />} />
-         
-          <Route path="*" element={<NoPage />} />
-        </Route>
           <Route path="/Loginpromoters" element={<LoginPromoters />} />
           <Route path="/SignUppromoters" element={<SignUpPromoters />} />
           <Route path="/Loginclients" element={<LoginClients />} />
           <Route path="/SignUpclients" element={<SignUpClients />} />
-       
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          
+
+          <Route path="*" element={<NoPage />} />
+        </Route>
+         
       </Routes>
     </BrowserRouter>
   );
