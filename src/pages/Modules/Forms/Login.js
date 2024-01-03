@@ -21,7 +21,7 @@ export function LoginClients() {
       className={"center"}
     >
       <div>
-        <h2>Welcome to the Art Event Site</h2>
+        <h2>Login as a Client</h2>
         <form onSubmit={handleSubmit}>
           <Stack direction={"column"} spacing={3}>
             <TextField
@@ -90,7 +90,7 @@ export function LoginPromoters() {
       className={"center"}
     >
       <div>
-        <h2>Welcome to the Art Event Site</h2>
+        <h2>Login as a Promoter</h2>
         <form onSubmit={handleSubmit}>
           <Stack direction={"column"} spacing={3}>
             <TextField
