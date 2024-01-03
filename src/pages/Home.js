@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import img1 from "../Assets/ArtGalleryimg1.jpg";
@@ -24,6 +24,7 @@ const images = [
 ];
 
 export const Home = () => {
+  const [userType, setUserType] = useState('none')
   return (
     <Stack spacing={3} style={{ height: "80vh" }}>
       <Slide
@@ -53,18 +54,32 @@ export const Home = () => {
            
            <Grid item  md={4}> 
              <span>
-               <Typography component={'i'} variant="h3">For the Clients  </Typography>
-               <Typography component={'i'} variant="body1">Description</Typography>
+               <Typography component={'i'} variant="h3" style={{display:'block'}}>For Clients  </Typography>
+               <Typography component={'i'} variant="body1">If you're looking to turn your day into a cultural adventure, you're in the right place! Explore our world of extraordinary exhibitions and snag yourself a ticket to fun. Get ready to dive into a journey of art, emotions, and discoveries. Don't miss the chance to purchase your ticket for an experience that will bring a smile to your face. Click now and start the countdown to cultural delight!"</Typography>
              </span>
            </Grid>
 
              <Grid item container direction={"row"}>
                <Grid item md={6}>
-                 <Button component="label" variant="text" style={{color:'white'}} startIcon={<KeyboardDoubleArrowLeftIcon />}> Log In</Button>
-               </Grid> 
+               <Link
+                  key={'login'}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/loginclients`}
+                >
+                   <KeyboardDoubleArrowLeftIcon /> <Typography textAlign="center"> {'Login'}</Typography>
+                
+                </Link>
+                   </Grid> 
                  <Grid item  md={6}>
-                 <Button component="label"  variant="text" style={{color:'white'}} endIcon={<KeyboardDoubleArrowRightIcon />}>Sign In</Button>
-                 </Grid>  
+                 <Link
+                  key={'SignUp'}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/signUpclients`}
+                >
+                   <KeyboardDoubleArrowRightIcon /> <Typography textAlign="center"> {'Sign Up'}</Typography>
+                
+                </Link>
+                  </Grid>  
              </Grid>
          </Grid>
        
@@ -75,18 +90,30 @@ export const Home = () => {
             
             <Grid item  md={4}> 
               <span>
-                <Typography component={'i'} variant="h3">For Promoters </Typography>
-                <Typography component={'i'} variant="body1">Description</Typography>
+                <Typography component={'i'} variant="h3" style={{display:'block'}}>For Promoters </Typography>
+                <Typography component={'i'} variant="body1">Welcome to the place where your event takes center stage! If you have a special occasion to share with the world, you're in the right spot. Enter the details of your event and let the magic of advertising bring it into the spotlight. The stage is yours, and we're here to make you shine. Don't wait, click now, and give your event the attention it deserves. Make every moment unforgettable!</Typography>
               </span>
             </Grid>
 
               <Grid item container direction={"row"}>
                 <Grid item md={6}>
-                  <Button component="label" variant="text" style={{color:'white'}} startIcon={<KeyboardDoubleArrowLeftIcon />}> Log In</Button>
-                </Grid> 
+                <Link
+                  key={'loginprom'}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/loginpromoters`}
+                >
+                   <KeyboardDoubleArrowLeftIcon /> <Typography textAlign="center"> {'Login'}</Typography>
+                
+                </Link>   </Grid> 
                   <Grid item  md={6}>
-                  <Button component="label"  variant="text" style={{color:'white'}} endIcon={<KeyboardDoubleArrowRightIcon />}>Sign In</Button>
-                  </Grid>  
+                  <Link
+                  key={'signUpprom'}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/signUppromoters`}
+                >
+                   <KeyboardDoubleArrowRightIcon /> <Typography textAlign="center"> {'Sign Up'}</Typography>
+                
+                </Link> </Grid>  
               </Grid>
           </Grid>
           <Grid item lg={4}>
@@ -98,7 +125,8 @@ export const Home = () => {
             <img src={img3} alt="img" />
           </Grid>
           <Grid item lg={7}>
-            <span>For Everyone</span>
+            <span> For Everyone...
+                Other features are coming soon.</span>
           </Grid>{" "}
         </Grid>
       </Box>
@@ -149,11 +177,21 @@ export const Home = () => {
           </Grid>
           <Grid item xs={4}>   <span>
               <Typography component={"i"} variant={"h6"}>
-                For Everyone
+                For Everyone...
+                Other features are coming soon.
               </Typography>
             </span></Grid>{" "}
         </Grid>
       </Box>
+      <footer >
+      <hr style={{width:'80%',margin: '10px auto'}}/>
+        <Stack direction={'row'}> 
+          <Typography component={'div'} variant="h5">hsdòcòvneqjhv</Typography>  
+          <Divider orientation="vertival"/>
+          <Typography component={'div'} variant="subtitle">hsdòcòvneqjhv</Typography>  
+       
+        </Stack>
+      </footer>
     </Stack>
   );
 };

@@ -91,6 +91,11 @@
   text-align: center;
 }
 
+footer{
+  background-color: rgb(38, 38, 26) ;
+  color: aliceblue;
+  display: 'flex';
+}
 .App-link {
   color: #61dafb;
 }
