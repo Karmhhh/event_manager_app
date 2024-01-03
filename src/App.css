@@ -90,7 +90,13 @@
   color: white;
   text-align: center;
 }
-
+.center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 footer{
   background-color: rgb(38, 38, 26) ;
   color: aliceblue;

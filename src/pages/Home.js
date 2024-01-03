@@ -125,7 +125,7 @@ export const Home = () => {
             <img src={img3} alt="img" />
           </Grid>
           <Grid item lg={7}>
-            <span> For Everyone...
+            <span> For Artists...
                 Other features are coming soon.</span>
           </Grid>{" "}
         </Grid>
@@ -177,7 +177,7 @@ export const Home = () => {
           </Grid>
           <Grid item xs={4}>   <span>
               <Typography component={"i"} variant={"h6"}>
-                For Everyone...
+                For Artists...
                 Other features are coming soon.
               </Typography>
             </span></Grid>{" "}
