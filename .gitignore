@@ -25,3 +25,6 @@ src/Assets/EllipseArtist.png
 src/Assets/EllipseArtist.png
 src/Assets/EllipseClient.png
 .gitignore
+src/Assets/EllipseManager.png
+src/Assets/Ellipseclient.png
+src/Assets/Ellipseartist.png
