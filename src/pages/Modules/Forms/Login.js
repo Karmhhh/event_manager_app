@@ -1,4 +1,4 @@
-import { Box, Stack , Link,Grid } from "@mui/material";
+import { Box, Stack, Link, Grid } from "@mui/material";
 import { useState } from "react";
 import { TextField, Button, Checkbox, FormControlLabel } from "@mui/material";
 export function LoginClients() {
@@ -39,32 +39,22 @@ export function LoginClients() {
               style={{ marginBottom: "10px" }}
             />
             <FormControlLabel control={<Checkbox />} label="Remember me" />
-            <Button type="submit" variant="outlined" color="success">
+            <Button type="submit" variant="outlined">
               Login
             </Button>
-         
-            <Grid container direction={'row'} justifyContent={'space-between'}>
-    <Grid item>  <Link 
-            href={'/forgotPassword'}
-            >
-              {'Forgot Password?'}
-            </Link></Grid>  
-            <Grid item>
-            <Link 
-            href={'/signUpClients'}
-            >
-              {'Sign Up'}
-            </Link> </Grid>
-         
-    </Grid>
 
+            <Grid container direction={"row"} justifyContent={"space-between"}>
+              <Grid item>
+                {" "}
+                <Link href={"/forgotPassword"}>{"Forgot Password?"}</Link>
+              </Grid>
+              <Grid item>
+                <Link href={"/signUpClients"}>{"Sign Up"}</Link>{" "}
+              </Grid>
+            </Grid>
           </Stack>
-      
-       
         </form>
-   
       </div>
-     
     </Box>
   );
 }
@@ -107,34 +97,24 @@ export function LoginPromoters() {
               onChange={(e) => setPassword(e.target.value)}
               style={{ marginBottom: "10px" }}
             />
-            
+
             <FormControlLabel control={<Checkbox />} label="Remember me" />
-        
-           
-            <Button type="submit" variant="outlined"  color="success">
+
+            <Button type="submit" variant="outlined">
               Login
             </Button>
-            <Grid container direction={'row'} justifyContent={'space-between'}>
-    <Grid item>  <Link 
-            href={'/forgotPassword'}
-            >
-              {'Forgot Password?'}
-            </Link></Grid>  
-            <Grid item>
-            <Link 
-            href={'/signUpPromoters'}
-            >
-              {'Sign Up'}
-            </Link> </Grid>
-         
-    </Grid>
+            <Grid container direction={"row"} justifyContent={"space-between"}>
+              <Grid item>
+                {" "}
+                <Link href={"/forgotPassword"}>{"Forgot Password?"}</Link>
+              </Grid>
+              <Grid item>
+                <Link href={"/signUpPromoters"}>{"Sign Up"}</Link>{" "}
+              </Grid>
+            </Grid>
           </Stack>
-        
-        </form> 
-         
-      
+        </form>
       </div>
- 
     </Box>
   );
 }

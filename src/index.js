@@ -14,8 +14,8 @@ import { ShowMoreEvent } from "./pages/ShowMoreEvent";
 import { PayPage } from "./pages/PayPage";
 import { Contacts } from "./pages/Contacts";
 import { Catalog } from "./pages/Catalog";
-import {RequestFormEventManager} from "./pages/Modules/Forms/RequestFormEventManager"
-import {RequestFormEventArtist} from "./pages/Modules/Forms/RequestFormArtist"
+import { Request } from "./pages/Modules/Forms/Request";
+import { RequestFormEventArtist } from "./pages/Modules/Forms/RequestFormArtist";
 import { LoginClients, LoginPromoters } from "./pages/Modules/Forms/Login";
 import { SignUpClients, SignUpPromoters } from "./pages/Modules/Forms/Signup";
 import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
@@ -36,7 +36,7 @@ export default function App() {
           <Route path="/Contacts" element={<Contacts />} />
           <Route path="/Catalog" element={<Catalog />} />
           <Route path="/RequestArtist" element={<RequestFormEventArtist />} />
-          <Route path="/RequestManager" element={<RequestFormEventManager />} />
+          <Route path="/Request" element={<Request />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Loginpromoters" element={<LoginPromoters />} />
           <Route path="/SignUppromoters" element={<SignUpPromoters />} />
@@ -44,11 +44,9 @@ export default function App() {
           <Route path="/SignUpclients" element={<SignUpClients />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/EventPage" element={<EventPage />} />
-          
 
           <Route path="*" element={<NoPage />} />
         </Route>
-         
       </Routes>
     </BrowserRouter>
   );
