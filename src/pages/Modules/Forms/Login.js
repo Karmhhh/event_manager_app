@@ -3,11 +3,11 @@ import { useState } from "react";
 import { TextField, Button, Checkbox, FormControlLabel } from "@mui/material";
 import im3 from "../../../Assets/background.jpg";
 export function LoginClients() {
-  const [email, setEmail] = useState("");
+  const [CF, setCF] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
+    console.log("Email:", CF);
     console.log("Password:", password);
   };
   return (
@@ -40,9 +40,9 @@ export function LoginClients() {
             <Stack direction={"column"} spacing={3}>
               <TextField
                 id="email"
-                label="Email"
+                label="Fiscal Code"
                 variant="standard"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setCF(e.target.value)}
                 style={{ marginBottom: "10px" }}
               />
               <TextField
@@ -79,12 +79,12 @@ export function LoginClients() {
 }
 
 export function LoginPromoters() {
-  const [email, setEmail] = useState("");
+  const [CF, setCF] = useState("");
 
   const [password, setPassword] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
+    console.log("Fiscal Code:", CF);
     console.log("Password:", password);
   };
   return (
@@ -117,9 +117,9 @@ export function LoginPromoters() {
             <Stack direction={"column"} spacing={3}>
               <TextField
                 id="email"
-                label="Email"
+                label="Fiscal Code"
                 variant="standard"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setCF(e.target.value)}
                 style={{ marginBottom: "10px" }}
               />
               <TextField
