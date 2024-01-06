@@ -4,26 +4,25 @@ import { useState } from "react";
 import img1 from "../Assets/ArtGalleryimg1.jpg";
 import img2 from "../Assets/ArtGalleryimg2.jpg";
 import img3 from "../Assets/ArtGalleryimg3.jpg";
-import img4 from "../Assets/Ellipseartist.png";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
-
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+
 const images = [
   {
     title:
-      " “L'arte non ha epoca. E' l'emozione che dorme su guanciali d'eternità.” ",
+      " “Art has no era. It is the emotion that sleeps on pillows of eternity.” ",
     url: img1,
   },
-  { title: " “All'opera si conosce il maestro.” ", url: img2 },
+  { title: " “At the opera you know the master.” ", url: img2 },
   {
-    title: " “L'arte è fatta per disturbare, la scienza per rassicurare.” ",
+    title: " “Art is made to disturb, science to reassure.” ",
     url: img3,
   },
 ];
 
-export const Home = () => {
+export const Home = () => { 
   const [userType, setUserType] = useState('none')
   return (
     <Stack spacing={3} style={{ height: "80vh" }}>

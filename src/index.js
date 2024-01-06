@@ -19,6 +19,7 @@ import {RequestFormEventArtist} from "./pages/Modules/Forms/RequestFormArtist"
 import { LoginClients, LoginPromoters } from "./pages/Modules/Forms/Login";
 import { SignUpClients, SignUpPromoters } from "./pages/Modules/Forms/Signup";
 import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
+import { EventPage } from "./pages/Components/EventPage";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/Loginclients" element={<LoginClients />} />
           <Route path="/SignUpclients" element={<SignUpClients />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/EventPage" element={<EventPage />} />
           
 
           <Route path="*" element={<NoPage />} />
