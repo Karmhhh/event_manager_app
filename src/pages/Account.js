@@ -24,7 +24,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import eventImage from "../Assets/event3.jpg";
+import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+
 const drawerWidth = 240;
 
 export function Account() {
@@ -42,6 +45,8 @@ export function Account() {
         return renderEventSection();
       case "Favorites":
         return renderFavoritesSection();
+      case "Request":
+        return <Request></Request>;
       default:
         return null;
     }
@@ -200,8 +205,6 @@ export function Account() {
                 nome={event.nome}
                 organizzatore={event.organizzatore}
                 data={event.data}
-                prezzo={event.prezzo}
-                descrizione={event.descrizione}
                 img={event.img}
               />
             ))}
@@ -390,6 +393,10 @@ export function Account() {
             {
               text: "Favorites",
               icon: <FavoriteIcon style={{ color: "white" }} />,
+            },
+            {
+              text: "Request",
+              icon: <InsertDriveFileIcon style={{ color: "white" }} />,
             },
           ].map((item) => (
             <ListItem

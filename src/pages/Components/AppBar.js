@@ -20,7 +20,6 @@ function ResponsiveAppBar() {
     { name: "Home" },
     { name: "Catalog" },
     { name: "Contacts" },
-    { name: "Request" },
     { name: "Account" },
   ];
   const settings = [

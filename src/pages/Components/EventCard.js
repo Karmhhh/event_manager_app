@@ -20,11 +20,11 @@ export function EventCard({nome,descrizione,organizzatore,prezzo,startDate,endDa
        {/* <Typography component={'div'} variant="body1" sx ={{ textOverflow: 'ellipsis', overflow: 'hidden',
             whiteSpace: 'nowrap'}}>{descrizione}</Typography>
         */}
-         <hr/> 
-       <Typography  align="right" variant="body1"><b>Price:</b>{`   ${prezzo} `}</Typography>
-     <Button onClick={()=>{navigate('/EventPage',{replace:true, state:{categoria,nome,luogo,descrizione,organizzatore,emailOrganizzatore,prezzo,startDate,endDate,img}})}}>
-                Show More
-                </Button>
+         {prezzo &&  <hr/> }
+         {prezzo &&   <Typography  align="right" variant="body1"><b>Price:</b>{`   ${prezzo} `}</Typography>}
+    {prezzo&& <Button onClick={()=>{navigate('/EventPage',{replace:true, state:{categoria,nome,luogo,descrizione,organizzatore,emailOrganizzatore,prezzo,startDate,endDate,img}})}}> Show More
+                </Button>}
+               
         </Stack>
     )
 }

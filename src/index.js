@@ -35,7 +35,6 @@ export default function App() {
           <Route path="/Contacts" element={<Contacts />} />
           <Route path="/Catalog" element={<Catalog />} />
           <Route path="/RequestArtist" element={<RequestFormEventArtist />} />
-          <Route path="/Request" element={<Request />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Loginpromoters" element={<LoginPromoters />} />
           <Route path="/SignUppromoters" element={<SignUpPromoters />} />
