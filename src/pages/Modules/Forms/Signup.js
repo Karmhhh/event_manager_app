@@ -9,7 +9,6 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import im3 from "../../../Assets/background.jpg";
-import axios from "axios";
 import { validCF } from "./reg";
 
 
