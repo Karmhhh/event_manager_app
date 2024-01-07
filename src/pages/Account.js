@@ -370,7 +370,7 @@ export function Account() {
         <Toolbar />
         <Divider />
         <Typography variant="h4" margin={2}>
-          Options
+          My Account
         </Typography>
         <Divider />
         <List>
