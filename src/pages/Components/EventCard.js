@@ -1,29 +1,30 @@
-import { Box, Button, Typography } from "@mui/material"
+import { Box, Button, Stack, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
-export function EventCard({nome,descrizione,organizzatore,prezzo,data,img}){
+export function EventCard({nome,descrizione,organizzatore,prezzo,startDate,endDate,img,luogo,categoria,emailOrganizzatore}){
     const navigate = useNavigate();
     return (
-        <Box
+        <Stack
+        spacing={1}
         style={{
           width: "15rem",
           padding: "0.5rem",
+          wordWrap:'breakWord'
         }}
       >
         <img src={img} style={{  border: '1px solid #ddd', bordeRadius: '4px', padding: '5px', width: '14rem', height: '14rem' }}></img>
-        <Typography component={'b'} variant="h5" >{nome}</Typography>
-        <Typography variant="subtitle">{`  By: ${organizzatore}`}</Typography>
-        <br/>
-        <Typography variant="subtitle"><b>On:</b>{`  ${data} `}</Typography>
-       
-        <Typography variant="body1"> <p>About this Event: </p> <pre>{`${descrizione} `}</pre></Typography>
-       <hr/> <Typography variant="body1"><b>Price:</b>{`   ${prezzo} `}</Typography>
-       <div     style={{
-          textAlign:'center'
-        }}>
-            <Button onClick={()=>{navigate('/EventPage',{replace:true, state:{nome,descrizione,organizzatore,prezzo,data,img}})}}>
+        <Typography component={'b'} variant="h6" >{nome}</Typography>
+        <Typography variant="subtitle"><b>By:</b>{`   ${organizzatore}`}</Typography>
+        <Typography variant="subtitle"><b>On:</b>{`  ${startDate } to ${endDate}`}</Typography>
+        <Typography><b>Where:</b>{`  ${luogo} `}</Typography>
+        <Typography><b>Category:</b>{`  ${categoria} `}</Typography>
+       {/* <Typography component={'div'} variant="body1" sx ={{ textOverflow: 'ellipsis', overflow: 'hidden',
+            whiteSpace: 'nowrap'}}>{descrizione}</Typography>
+        */}
+         <hr/> 
+       <Typography  align="right" variant="body1"><b>Price:</b>{`   ${prezzo} `}</Typography>
+     <Button onClick={()=>{navigate('/EventPage',{replace:true, state:{categoria,nome,luogo,descrizione,organizzatore,emailOrganizzatore,prezzo,startDate,endDate,img}})}}>
                 Show More
                 </Button>
-                </div>
-        </Box>
+        </Stack>
     )
 }
