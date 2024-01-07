@@ -9,9 +9,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import im3 from "../../../Assets/background.jpg";
-import axios from "axios";
 import { validCF } from "./reg";
-
 
 export function SignUpClients() {
   const [email, setEmail] = useState("");
@@ -22,7 +20,7 @@ export function SignUpClients() {
   const [city, setCity] = useState("");
   const [nation, setNation] = useState("");
   const [address, setAddress] = useState("");
- 
+
   const [err, setErr] = useState();
   const [fiscalCode, setFiscalCode] = useState("");
 
@@ -43,9 +41,9 @@ export function SignUpClients() {
     console.log("FiscalCode", fiscalCode);
     if (!validCF.test(fiscalCode)) {
       setErr(true);
-   }else{
-     setErr(false)
-   }
+    } else {
+      setErr(false);
+    }
   };
   return (
     <>
@@ -112,18 +110,14 @@ export function SignUpClients() {
                 />
               </Grid>
               <Grid item md="5">
-                
-              
                 <TextField
-                required
+                  required
                   id="outlined-required"
                   label="Address"
-                  onChange={(e) => setAddress(e.target.value)
-                  
-                  }
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </Grid>
-          
+
               <Grid item md="5">
                 <TextField
                   required
@@ -160,7 +154,11 @@ export function SignUpClients() {
                 </FormControl>
               </Grid>
               <Grid item md="10">
-                <Button type='submit' variant="outlined" style={{ float: "right" }}>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  style={{ float: "right" }}
+                >
                   Register
                 </Button>
               </Grid>
@@ -262,7 +260,7 @@ export function SignUpPromoters() {
               </Grid>
               <Grid item md="5">
                 <TextField
-                 required
+                  required
                   id="outlined-required"
                   label="City"
                   onChange={(e) => setCity(e.target.value)}
@@ -270,7 +268,7 @@ export function SignUpPromoters() {
               </Grid>
               <Grid item md="5">
                 <TextField
-                required
+                  required
                   id="outlined-required"
                   label="Nation"
                   onChange={(e) => setNation(e.target.value)}
@@ -312,7 +310,11 @@ export function SignUpPromoters() {
                 </FormControl>
               </Grid>
               <Grid item md="10">
-                <Button  type='submit' variant="outlined" style={{ float: "right" }}>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  style={{ float: "right" }}
+                >
                   Register
                 </Button>
               </Grid>

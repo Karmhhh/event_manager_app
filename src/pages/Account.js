@@ -20,11 +20,14 @@ import { EventCard } from "./Components/EventCard";
 import event1 from "../Assets/event1.jpg";
 import event2 from "../Assets/event2.jpg";
 import event3 from "../Assets/event3.jpg";
-
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import eventImage from "../Assets/event3.jpg";
 import { useTheme } from "@mui/material/styles";
 const drawerWidth = 240;
 
-export function Option() {
+export function Account() {
   const [currentSection, setCurrentSection] = useState("Profile");
   const theme = useTheme();
 
@@ -35,6 +38,10 @@ export function Option() {
       // Aggiungi altri casi per le sezioni aggiuntive
       case "Tickets":
         return renderTicketSection();
+      case "Event":
+        return renderEventSection();
+      case "Favorites":
+        return renderFavoritesSection();
       default:
         return null;
     }
@@ -132,7 +139,7 @@ export function Option() {
 
   const renderTicketSection = () => {
     return (
-      <>
+      <div style={{ height: "auto", overflowY: "auto" }}>
         <Box
           style={{
             margin: "5rem",
@@ -143,13 +150,13 @@ export function Option() {
             textAlign: "left",
           }}
         >
-          ,<Typography variant="h5">Strong Contrast</Typography>
+          <Typography variant="h5">Your Tickets</Typography>
           <hr />
           <Stack
             direction={"row"}
             spacing={6}
             justifyContent={"space-between"}
-            style={{ overflowY: "scroll", margin: "3rem" }}
+            style={{ overflowY: "scroll", margin: "auto" }}
           >
             {events.map((event) => (
               <EventCard
@@ -163,7 +170,66 @@ export function Option() {
             ))}
           </Stack>
         </Box>
-      </>
+      </div>
+    );
+  };
+
+  const renderEventSection = () => {
+    return (
+      <div style={{ height: "auto", overflowY: "auto" }}>
+        <Box
+          style={{
+            margin: "5rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "70vh",
+            padding: "1rem",
+            textAlign: "left",
+          }}
+        >
+          <Typography variant="h5">Your Events</Typography>
+          <hr />
+          <Stack
+            direction={"row"}
+            spacing={6}
+            justifyContent={"space-between"}
+            style={{ overflowY: "scroll", margin: "auto" }}
+          >
+            {events.map((event) => (
+              <EventCard
+                nome={event.nome}
+                organizzatore={event.organizzatore}
+                data={event.data}
+                prezzo={event.prezzo}
+                descrizione={event.descrizione}
+                img={event.img}
+              />
+            ))}
+          </Stack>
+        </Box>
+      </div>
+    );
+  };
+
+  const renderFavoritesSection = () => {
+    return (
+      <Card style={{ marginTop: "30px", marginLeft: "30px" }}>
+        <CardMedia
+          component="img"
+          height="200"
+          image={eventImage}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Sarà davvero una torta?
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Se sei un appassionato di dolci e ami le sorprese, facciamo al caso
+            tuo!
+          </Typography>
+        </CardContent>
+      </Card>
     );
   };
 
