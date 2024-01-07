@@ -60,19 +60,35 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 export const Request = () => {
+
+  var data = new Date();
+  var gg, mm, aaaa;
+  gg = data.getDate() + "-";
+  mm = data.getMonth() + 1 + "-";
+  aaaa = data.getFullYear();
+  let today = gg + mm + aaaa
+
+  const themeEvent = useTheme();
   const [ourThemes, setOurThemes] = React.useState([]);
-  const [location, setLocation] = useState("");
+  const [locationAddress, setLocationAddress] = useState("");
+  const [eventRegion, setRegion] = useState("");
+  const [eventRequestDate, setReqDate] = useState(today);
+  const [pic, setPic] = useState("");
+  const [promoterCf, setPromoterCf] = useState("");
   const [describe, setDescribe] = useState("");
   const [locationName, setLocationName] = useState("");
   const [locationDescribe, setLocationDescribe] = useState("");
   const [maxCustomers, setMaxCustomers] = useState("");
-  const themeEvent = useTheme();
-  const [eventName, setEventName] = useState("");
+  const [eventPrice, setEventPrice] = useState("");
+  const [eventName, setEventName] = useState(""); 
+  const [begin, setBegin] = React.useState(dayjs()); 
+  const [permissionDocumentPath, setPermissionDocumentPath] = useState(""); 
+  const [promoterIdCardPath, setPromoterIdCardPath] = useState(""); 
+  const [end, setEnd] = React.useState(dayjs());
+  
+  
   const [buttonText, setButtonText] = useState("Send");
   const [buttonDisabled, setButtonDisabled] = useState(false);
-  const [begin, setBegin] = React.useState(dayjs());
-  const [end, setEnd] = React.useState(dayjs());
-
   const handleChange = (event) => {
     const {
       target: { value },
@@ -85,13 +101,6 @@ export const Request = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Location Address", location);
-    console.log("Location Name", locationName);
-    console.log("Describe your Event", describe);
-    console.log("Describe Location", locationDescribe);
-    console.log("Max Customers", maxCustomers);
-    console.log("Theme", themeEvent);
-    console.log("Event Name", eventName);
     handleSendTicket()
   };
   const handleSendTicket = () => {
@@ -102,12 +111,6 @@ export const Request = () => {
     setButtonText("Sended!");
   }
 
-  var data = new Date();
-  var gg, mm, aaaa;
-  gg = data.getDate() + "/";
-  mm = data.getMonth() + 1 + "/";
-  aaaa = data.getFullYear();
-  let today = gg + mm + aaaa
   return (
     <>
       <style>
@@ -126,11 +129,11 @@ export const Request = () => {
         style={{
           border: "groove 3px black",
           borderRadius: "30px",
-          width: "30rem",
+          width: "40rem",
           padding: "1rem",
           backgroundColor: "rgba(255, 255, 255, 0.7)",
+          margin:'2rem auto'
         }}
-        className={"center"}
       >
         <div>
           <h1>{"Event Request"}</h1>
@@ -141,7 +144,7 @@ export const Request = () => {
               spacing={2}
               style={{ justifyContent: "center" }}
             >
-              <Grid item md="5">
+              <Grid item md="4">
                 <TextField
                   required
                   id="outlined-required"
@@ -150,7 +153,17 @@ export const Request = () => {
                   style={{ width: "90%" }}
                 />
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
+                <TextField
+                required
+                  id="outlined-required"
+                  label="Describe Event"
+                  onChange={(e) => setDescribe(e.target.value)}
+                  style={{ width: "90%" }}
+                />
+              </Grid>
+              
+              <Grid item md="4">
                 <TextField
                   required
                   id="outlined-required"
@@ -159,25 +172,25 @@ export const Request = () => {
                   style={{ width: "90%" }}
                 />
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
                 <TextField
                   required
                   id="outlined-required"
                   label="Location Address"
-                  onChange={(e) => setLocation(e.target.value)}
+                  onChange={(e) => setLocationAddress(e.target.value)}
                   style={{ width: "90%" }}
                 />
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
                 <TextField
                   required
                   id="outlined-required"
-                  label="Max Customer"
-                  onChange={(e) => setMaxCustomers(e.target.value)}
+                  label="Region"
+                  onChange={(e) => setRegion(e.target.value)}
                   style={{ width: "90%" }}
                 />
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
                 <TextField
                 required
                   id="outlined-required"
@@ -186,7 +199,34 @@ export const Request = () => {
                   style={{ width: "90%" }}
                 />
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Event Price"
+                  onChange={(e) => setEventPrice(e.target.value)}
+                  style={{ width: "90%" }}
+                />
+              </Grid>
+              <Grid item md="4">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Promoter Fiscal Code"
+                  onChange={(e) => setPromoterCf(e.target.value)}
+                  style={{ width: "90%" }}
+                />
+              </Grid>
+              <Grid item md="4">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Max Customer"
+                  onChange={(e) => setMaxCustomers(e.target.value)}
+                  style={{ width: "90%" }}
+                />
+              </Grid>
+              <Grid item md="4">
                 <FormControl sx={{ width: "90%" }}>
                   <InputLabel id="demo-multiple-name-label">Theme</InputLabel>
                   <Select
@@ -210,7 +250,7 @@ export const Request = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item md="8">
+              <Grid item md="12">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer
                     components={["DateTimePicker", "DateTimePicker"]}
@@ -223,7 +263,8 @@ export const Request = () => {
                   </DemoContainer>
                 </LocalizationProvider>
               </Grid>
-              <Grid item md="8">
+            
+              <Grid item md="12">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer
                     components={["DateTimePicker", "DateTimePicker"]}
@@ -236,7 +277,7 @@ export const Request = () => {
                   </DemoContainer>
                 </LocalizationProvider>
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
                 <Typography fontStyle={"italic"}>
                   Event Image
                 </Typography>
@@ -244,12 +285,26 @@ export const Request = () => {
                   component="label"
                   variant="contained"
                   startIcon={<CloudUploadIcon />}
-                >
+                  >
                   Upload file
-                  <VisuallyHiddenInput type="file" />
+                  <VisuallyHiddenInput type="file" onChange={(e)=>setPic(e.target.files[0])}/>
                 </Button>
               </Grid>
-              <Grid item md="5">
+              <Grid item md="4">
+                <Typography fontStyle={"italic"}>
+                  Permission Document
+                </Typography>
+                <Button
+                  component="label"
+                  variant="contained"
+                  startIcon={<CloudUploadIcon />}
+                >
+                  Upload file
+                  <VisuallyHiddenInput type="file" onChange={(e)=>setPermissionDocumentPath(e.target.files[0])}/>
+                
+                </Button>
+              </Grid>
+              <Grid item md="4">
                 <Typography fontStyle={"italic"}>Id Card</Typography>
                 <Button
                   component="label"
@@ -257,11 +312,12 @@ export const Request = () => {
                   startIcon={<CloudUploadIcon />}
                 >
                   Upload file
-                  <VisuallyHiddenInput type="file" />
+                  <VisuallyHiddenInput type="file" onChange={(e)=>setPromoterIdCardPath(e.target.files[0])}/>
+                
                 </Button>
               </Grid>
             </Grid>
-            <Grid item md="5" margin={2}>
+            <Grid item md="4" margin={2}>
               <Typography variant="h6">Why should we pick you?</Typography>
               <TextField
                 required
@@ -273,7 +329,7 @@ export const Request = () => {
                 onChange={(e) => setDescribe(e.target.value)}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item md="4">
               <Button
                type="submit"
                 variant="outlined"
