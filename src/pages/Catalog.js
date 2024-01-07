@@ -8,101 +8,77 @@ export const Catalog = () => {
 
 const events = [
     {
-        nome:'Comicon',
-        organizzatore: 'Marck jset',
-        data: 'Sat, 03 May 22',
-        prezzo:' 12$',
-        descrizione: 'lorem impsWEEEjdhuceh',
-        img: event1
-    },
-    {
-        nome:'Romix',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 17$',
-        descrizione: 'loDXSCErem impsjdhuceh',
-        img: event2
-    },
-    {
-        nome:'Lucca',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 10$',
-        descrizione: 'lorem impsjdWFEEWEFhuceh',
+        "eventId": 4,
+        "eventName": "Sarà davvero una torta?",
+        "eventDescription": "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+        "maximumCapacity": 70,
+        "startDate": "2024-05-20",
+        "endDate": "2024-05-20",
+        "eventCategory": "Cucina",
+        "eventRegion": "Lazio",
+        "eventPrice": "$ 23,54",
+        "eventPromoter": "Mark Datels",
+        "emailOrganizzatore": "Mark_Datels@exemple.xyz",
         img: event3
-    },
-    {
-        nome:'comicon',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 12$',
-        descrizione: 'lorem impsWEEEjdhuceh',
-        img: event1
-    },
-    {
-        nome:'Romix',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 17$',
-        descrizione: 'loDXSCErem impsjdhuceh',
-        img: event2
-    },
-    {
-        nome:'Lucca',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 10$',
-        descrizione: 'lorem impsjdWFEEWEFhuceh',
-        img: event3
-    },
-    {
-        nome:'Comicon',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 12$',
-        descrizione: 'lorem impsWEEEjdhuceh',
-        img: event1
-    },
-    {
-        nome:'Romix',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 17$',
-        descrizione: 'loDXSCErem impsjdhuceh',
-        img: event2
-    },
-    {
-        nome:'Lucca',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 10$',
-        descrizione: 'lorem impsjdWFEEWEFhuceh',
-        img: event3
-    },
-    {
-        nome:'Comicon',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 12$',
-        descrizione: 'lorem impsWEEEjdhuceh',
-        img: event1
-    },
-    {
-        nome:'Romix',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 17$',
-        descrizione: 'loDXSCErem impsjdhuceh',
-        img: event2
-    },
-    {
-        nome:'Lucca',
-        organizzatore: 'Marck jset',
-        data:  'Sat, 03 May 22',
-        prezzo:' 10$',
-        descrizione: 'lorem impsjdWFEEWEFhuceh',
-        img: event3
-    },
+        },
+        {
+            "eventId": 4,
+            "eventName": "Sarà davvero una torta?",
+            "eventDescription": "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+            "maximumCapacity": 70,
+            "startDate": "2024-05-20",
+            "endDate": "2024-05-20",
+            "eventCategory": "Cucina",
+            "eventRegion": "Lazio",
+            "eventPrice": "$ 23,54",
+            "eventPromoter": "Mark Datels",
+            "emailOrganizzatore": "Mark_Datels@exemple.xyz",
+            img: event3
+            },
+            {
+                "eventId": 4,
+                "eventName": "Sarà davvero una torta?",
+                "eventDescription": "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+                "maximumCapacity": 70,
+                "startDate": "2024-05-20",
+                "endDate": "2024-05-20",
+                "eventCategory": "Cucina",
+                "eventRegion": "Lazio",
+                "eventPrice": "$ 23,54",
+                "eventPromoter": "Mark Datels",
+                "emailOrganizzatore": "Mark_Datels@exemple.xyz",
+                img: event3
+                },
+                {
+                    "eventId": 4,
+                    "eventName": "Sarà davvero una torta?",
+                    "eventDescription": "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+                    "maximumCapacity": 70,
+                    "startDate": "2024-05-20",
+                    "endDate": "2024-05-20",
+                    "eventCategory": "Cucina",
+                    "eventRegion": "Lazio",
+                    "eventPrice": "$ 23,54",
+                    "eventPromoter": "Mark Datels",
+                    "emailOrganizzatore": "Mark_Datels@exemple.xyz",
+                    img: event3
+                    },
+                    {
+                        "eventId": 4,
+                        "eventName": "Sarà davvero una torta?",
+                        "eventDescription": "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+                        "maximumCapacity": 70,
+                        "startDate": "2024-05-20",
+                        "endDate": "2024-05-20",
+                        "eventCategory": "Cucina",
+                        "eventRegion": "Lazio",
+                        "eventPrice": "$ 23,54",
+                        "eventPromoter": "Mark Datels",
+                        "emailOrganizzatore": "Mark_Datels@exemple.xyz",
+                        img: event3
+                        },
+        
+   
 ]
 
     return(<>
@@ -110,74 +86,20 @@ const events = [
             margin:'5rem', 
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: '70vh',
+            height: '72vh',
             padding: '1rem',
             textAlign: 'left'}}>,
            
-            <Typography variant="h5">Strong Contrast</Typography>
+            <Typography variant="h5">Our Events</Typography>
             <hr/>
             <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>
                 {events.map((event)=>(
-                  <EventCard nome={event.nome} organizzatore={event.organizzatore} data={event.data} prezzo={event.prezzo} descrizione={event.descrizione} img={event.img}/>
-                 
+                  <EventCard emailOrganizzatore = {event.emailOrganizzatore} luogo={event.eventRegion} categoria={event.eventCategory} nome={event.eventName} organizzatore={event.eventPromoter} startDate={event.startDate}  endDate={event.endDate} prezzo={event.eventPrice} descrizione={event.eventDescription} img={event.img}/>
                 ))}
 
             </Stack>
         </Box>
-        <Box style={{
-            margin:'5rem', 
-            border: "groove 1px gray",
-            borderRadius: "10px",
-            height: '70vh',
-            padding: '1rem',
-            textAlign: 'left'}}>,
-           
-            <Typography variant="h5">Different</Typography>
-            <hr/>
-            <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>
-                {events.map((event)=>(
-                  <EventCard nome={event.nome} organizzatore={event.organizzatore} data={event.data} prezzo={event.prezzo} descrizione={event.descrizione} img={event.img}/>
-                 
-                ))}
-
-            </Stack>
-        </Box>
-        <Box style={{
-            margin:'5rem', 
-            border: "groove 1px gray",
-            borderRadius: "10px",
-            height: '70vh',
-            padding: '1rem',
-            textAlign: 'left'}}>,
-           
-            <Typography variant="h5">Dark</Typography>
-            <hr/>
-            <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>
-                {events.map((event)=>(
-                  <EventCard nome={event.nome} organizzatore={event.organizzatore} data={event.data} prezzo={event.prezzo} descrizione={event.descrizione} img={event.img}/>
-                 
-                ))}
-
-            </Stack>
-        </Box>
-        <Box style={{
-            margin:'5rem', 
-            border: "groove 1px gray",
-            borderRadius: "10px",
-            height: '70vh',
-            padding: '1rem',
-            textAlign: 'left'}}>,
-           
-            <Typography variant="h5">Horror</Typography>
-            <hr/>
-            <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>
-                {events.map((event)=>(
-                  <EventCard nome={event.nome} organizzatore={event.organizzatore} data={event.data} prezzo={event.prezzo} descrizione={event.descrizione} img={event.img}/>
-                 
-                ))}
-
-            </Stack>
-        </Box>
+     
     
     
     </>

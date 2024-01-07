@@ -118,7 +118,7 @@ export const Home = () => {
                   variant="h3"
                   style={{ display: "block" }}
                 >
-                  For Clients{" "}
+                  For Customers{" "}
                 </Typography>
                 <Typography component={"i"} variant="body1">
                   If you're looking to turn your day into a cultural adventure,

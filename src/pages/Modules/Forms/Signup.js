@@ -9,6 +9,9 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import im3 from "../../../Assets/background.jpg";
+import axios from "axios";
+import { validCF } from "./reg";
+
 
 export function SignUpClients() {
   const [email, setEmail] = useState("");
@@ -18,8 +21,12 @@ export function SignUpClients() {
   const [birthday, setBirthday] = useState("");
   const [city, setCity] = useState("");
   const [nation, setNation] = useState("");
+  const [address, setAddress] = useState("");
+ 
+  const [err, setErr] = useState();
   const [fiscalCode, setFiscalCode] = useState("");
-  const [showPassword, setShowPassword] = React.useState(false);
+
+  const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -34,6 +41,11 @@ export function SignUpClients() {
     console.log("City", city);
     console.log("Nation", nation);
     console.log("FiscalCode", fiscalCode);
+    if (!validCF.test(fiscalCode)) {
+      setErr(true);
+   }else{
+     setErr(false)
+   }
   };
   return (
     <>
@@ -100,21 +112,18 @@ export function SignUpClients() {
                 />
               </Grid>
               <Grid item md="5">
+                
+              
                 <TextField
                 required
                   id="outlined-required"
-                  label="City"
-                  onChange={(e) => setCity(e.target.value)}
+                  label="Address"
+                  onChange={(e) => setAddress(e.target.value)
+                  
+                  }
                 />
               </Grid>
-              <Grid item md="5">
-                <TextField
-                required
-                  id="outlined-required"
-                  label="Nation"
-                  onChange={(e) => setNation(e.target.value)}
-                />
-              </Grid>
+          
               <Grid item md="5">
                 <TextField
                   required

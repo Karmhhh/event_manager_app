@@ -10,7 +10,6 @@ import { NoPage } from "./pages/NoPages";
 import { ManagerEvent } from "./pages/ManagerEvent";
 import { Client } from "./pages/Client";
 import { Artist } from "./pages/Artist";
-import { ShowMoreEvent } from "./pages/ShowMoreEvent";
 import { PayPage } from "./pages/PayPage";
 import { Contacts } from "./pages/Contacts";
 import { Catalog } from "./pages/Catalog";
@@ -19,7 +18,7 @@ import { RequestFormEventArtist } from "./pages/Modules/Forms/RequestFormArtist"
 import { LoginClients, LoginPromoters } from "./pages/Modules/Forms/Login";
 import { SignUpClients, SignUpPromoters } from "./pages/Modules/Forms/Signup";
 import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
-import { EventPage } from "./pages/Components/EventPage";
+import  EventPage  from "./pages/Components/EventPage";
 
 export default function App() {
   return (
@@ -31,7 +30,6 @@ export default function App() {
           <Route path="/Client" element={<Client />} />
           <Route path="/ManagerEvent" element={<ManagerEvent />} />
           <Route path="/Artist" element={<Artist />} />
-          <Route path="/ShowMoreEvent" element={<ShowMoreEvent />} />
           <Route path="/PayPage" element={<PayPage />} />
           <Route path="/Contacts" element={<Contacts />} />
           <Route path="/Catalog" element={<Catalog />} />

@@ -210,7 +210,7 @@ export const Request = () => {
                   </Select>
                 </FormControl>
               </Grid>
-             /* <Grid item md="8">
+              <Grid item md="8">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer
                     components={["DateTimePicker", "DateTimePicker"]}
@@ -238,7 +238,7 @@ export const Request = () => {
               </Grid>
               <Grid item md="5">
                 <Typography fontStyle={"italic"}>
-                  Permission Document
+                  Event Image
                 </Typography>
                 <Button
                   component="label"
