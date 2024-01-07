@@ -21,6 +21,7 @@ function ResponsiveAppBar() {
     { name: "Catalog" },
     { name: "Contacts" },
     { name: "Request" },
+    { name: "Option" },
   ];
   const settings = [
     {
@@ -73,7 +74,13 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ background: "black" }}>
+    <AppBar
+      position="static"
+      style={{ background: "black" }}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

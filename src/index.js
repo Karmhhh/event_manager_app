@@ -20,6 +20,7 @@ import { LoginClients, LoginPromoters } from "./pages/Modules/Forms/Login";
 import { SignUpClients, SignUpPromoters } from "./pages/Modules/Forms/Signup";
 import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
 import { EventPage } from "./pages/Components/EventPage";
+import { Option } from "./pages/Option";
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/SignUpclients" element={<SignUpClients />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/EventPage" element={<EventPage />} />
+          <Route path="/Option" element={<Option />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>
