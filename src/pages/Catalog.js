@@ -88,8 +88,7 @@ const events = [
             borderRadius: "10px",
             height: '72vh',
             padding: '1rem',
-            textAlign: 'left'}}>,
-           
+            textAlign: 'left'}}>
             <Typography variant="h5">Our Events</Typography>
             <hr/>
             <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>

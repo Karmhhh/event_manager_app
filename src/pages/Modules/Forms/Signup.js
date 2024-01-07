@@ -22,7 +22,7 @@ export function SignUpClients() {
   const [nation, setNation] = useState("");
   const [address, setAddress] = useState("");
  
-  const [err, setErr] = useState();
+  const [err, setErr] = useState('');
   const [fiscalCode, setFiscalCode] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
@@ -30,21 +30,16 @@ export function SignUpClients() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Name", name);
-    console.log("Surname", surname);
-    console.log("Birthday", birthday);
-    console.log("City", city);
-    console.log("Nation", nation);
-    console.log("FiscalCode", fiscalCode);
-    if (!validCF.test(fiscalCode)) {
-      setErr(true);
+    if (validCF.test(fiscalCode)) {
+     
+     //QUi chiamata api
    }else{
-     setErr(false)
+    setErr('Fiscal Code not valid')
    }
+
   };
   return (
     <>
@@ -111,15 +106,27 @@ export function SignUpClients() {
                 />
               </Grid>
               <Grid item md="5">
-                
-              
+                <TextField
+                 required
+                  id="outlined-required"
+                  label="Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Grid>
+              <Grid item md="5">
+                <TextField
+                 required
+                  id="outlined-required"
+                  label="City"
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </Grid>
+              <Grid item md="5">
                 <TextField
                 required
                   id="outlined-required"
-                  label="Address"
-                  onChange={(e) => setAddress(e.target.value)
-                  
-                  }
+                  label="Nation"
+                  onChange={(e) => setNation(e.target.value)}
                 />
               </Grid>
           
@@ -162,6 +169,7 @@ export function SignUpClients() {
                 <Button type='submit' variant="outlined" style={{ float: "right" }}>
                   Register
                 </Button>
+                {err }
               </Grid>
             </Grid>
           </form>
@@ -177,23 +185,26 @@ export function SignUpPromoters() {
   const [surname, setSurname] = useState("");
   const [birthday, setBirthday] = useState("");
   const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
   const [nation, setNation] = useState("");
   const [fiscalCode, setFiscalCode] = useState("");
+
+  const [err, setErr] = useState("");
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Name", name);
-    console.log("Surname", surname);
-    console.log("Birthday", birthday);
-    console.log("City", city);
-    console.log("Nation", nation);
-    console.log("FiscalCode", fiscalCode);
+    if (validCF.test(fiscalCode)) {
+     
+     //QUi chiamata api
+   }else{
+    setErr('Fiscal Code not valid')
+   }
+
   };
   return (
     <>
@@ -263,6 +274,14 @@ export function SignUpPromoters() {
                 <TextField
                  required
                   id="outlined-required"
+                  label="Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Grid>
+              <Grid item md="5">
+                <TextField
+                 required
+                  id="outlined-required"
                   label="City"
                   onChange={(e) => setCity(e.target.value)}
                 />
@@ -314,6 +333,7 @@ export function SignUpPromoters() {
                 <Button  type='submit' variant="outlined" style={{ float: "right" }}>
                   Register
                 </Button>
+                {err}
               </Grid>
             </Grid>
           </form>
