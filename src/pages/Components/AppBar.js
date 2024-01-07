@@ -20,7 +20,7 @@ function ResponsiveAppBar() {
     { name: "Home" },
     { name: "Catalog" },
     { name: "Contacts" },
-    { name: "Request" },
+    { name: "Account" },
   ];
   const settings = [
     {
@@ -73,7 +73,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ background: "black" }}>
+    <AppBar
+      position="static"
+      style={{ background: "black" }}
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -129,7 +133,7 @@ function ResponsiveAppBar() {
                   to={`/${page.name}`}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography >{page.name}</Typography>
+                    <Typography>{page.name}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -192,7 +196,7 @@ function ResponsiveAppBar() {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting.name} onClick={() => setting.action()}>
-                    <Typography >{setting.name}</Typography>
+                    <Typography>{setting.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -222,10 +226,7 @@ function ResponsiveAppBar() {
               >
                 {logins.map((login) => (
                   <MenuItem key={login.name}>
-                    <Link
-                      to={login.action}
-                      style={{ textDecoration: "none" }}
-                    >
+                    <Link to={login.action} style={{ textDecoration: "none" }}>
                       {login.name}
                     </Link>
                   </MenuItem>
