@@ -39,6 +39,7 @@ export function LoginClients() {
           <form onSubmit={handleSubmit}>
             <Stack direction={"column"} spacing={3}>
               <TextField
+                required
                 id="email"
                 label="Fiscal Code"
                 variant="standard"
@@ -46,6 +47,7 @@ export function LoginClients() {
                 style={{ marginBottom: "10px" }}
               />
               <TextField
+              required
                 id="password"
                 label="Password"
                 variant="standard"
@@ -116,6 +118,7 @@ export function LoginPromoters() {
           <form onSubmit={handleSubmit}>
             <Stack direction={"column"} spacing={3}>
               <TextField
+              required
                 id="email"
                 label="Fiscal Code"
                 variant="standard"
@@ -123,6 +126,7 @@ export function LoginPromoters() {
                 style={{ marginBottom: "10px" }}
               />
               <TextField
+              required
                 id="password"
                 label="Password"
                 variant="standard"

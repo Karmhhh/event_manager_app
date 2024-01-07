@@ -101,6 +101,7 @@ export function SignUpClients() {
               </Grid>
               <Grid item md="5">
                 <TextField
+                required
                   id="outlined-required"
                   label="City"
                   onChange={(e) => setCity(e.target.value)}
@@ -108,6 +109,7 @@ export function SignUpClients() {
               </Grid>
               <Grid item md="5">
                 <TextField
+                required
                   id="outlined-required"
                   label="Nation"
                   onChange={(e) => setNation(e.target.value)}
@@ -149,7 +151,7 @@ export function SignUpClients() {
                 </FormControl>
               </Grid>
               <Grid item md="10">
-                <Button variant="outlined" style={{ float: "right" }}>
+                <Button type='submit' variant="outlined" style={{ float: "right" }}>
                   Register
                 </Button>
               </Grid>
@@ -251,6 +253,7 @@ export function SignUpPromoters() {
               </Grid>
               <Grid item md="5">
                 <TextField
+                 required
                   id="outlined-required"
                   label="City"
                   onChange={(e) => setCity(e.target.value)}
@@ -258,6 +261,7 @@ export function SignUpPromoters() {
               </Grid>
               <Grid item md="5">
                 <TextField
+                required
                   id="outlined-required"
                   label="Nation"
                   onChange={(e) => setNation(e.target.value)}
@@ -276,7 +280,7 @@ export function SignUpPromoters() {
                   variant="outlined"
                   onChange={(e) => setPassword(e.target.value)}
                 >
-                  <InputLabel htmlFor="outlined-adornment-password">
+                  <InputLabel required htmlFor="outlined-adornment-password">
                     Password
                   </InputLabel>
                   <OutlinedInput
@@ -299,7 +303,7 @@ export function SignUpPromoters() {
                 </FormControl>
               </Grid>
               <Grid item md="10">
-                <Button variant="outlined" style={{ float: "right" }}>
+                <Button  type='submit' variant="outlined" style={{ float: "right" }}>
                   Register
                 </Button>
               </Grid>

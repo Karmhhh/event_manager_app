@@ -136,7 +136,7 @@ function ResponsiveAppBar() {
                   to={`/${page.name}`}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Typography >{page.name}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -199,7 +199,7 @@ function ResponsiveAppBar() {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting.name} onClick={() => setting.action()}>
-                    <Typography textAlign="center">{setting.name}</Typography>
+                    <Typography >{setting.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -231,7 +231,6 @@ function ResponsiveAppBar() {
                   <MenuItem key={login.name}>
                     <Link
                       to={login.action}
-                      textAlign="center"
                       style={{ textDecoration: "none" }}
                     >
                       {login.name}
