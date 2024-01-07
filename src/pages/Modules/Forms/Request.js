@@ -92,6 +92,7 @@ export const Request = () => {
     console.log("Max Customers", maxCustomers);
     console.log("Theme", themeEvent);
     console.log("Event Name", eventName);
+    handleSendTicket()
   };
   const handleSendTicket = () => {
     alert("Sended! Check your email!");
@@ -100,6 +101,13 @@ export const Request = () => {
   function handleClick() {
     setButtonText("Sended!");
   }
+
+  var data = new Date();
+  var gg, mm, aaaa;
+  gg = data.getDate() + "/";
+  mm = data.getMonth() + 1 + "/";
+  aaaa = data.getFullYear();
+  let today = gg + mm + aaaa
   return (
     <>
       <style>
@@ -171,6 +179,7 @@ export const Request = () => {
               </Grid>
               <Grid item md="5">
                 <TextField
+                required
                   id="outlined-required"
                   label="Describe Location"
                   onChange={(e) => setLocationDescribe(e.target.value)}
@@ -201,7 +210,7 @@ export const Request = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item md="8">
+             /* <Grid item md="8">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer
                     components={["DateTimePicker", "DateTimePicker"]}
@@ -266,12 +275,10 @@ export const Request = () => {
             </Grid>
             <Grid item md="5">
               <Button
+               type="submit"
                 variant="outlined"
                 size="large"
-                onClick={() => {
-                  handleSendTicket();
-                  handleClick();
-                }}
+           
                 disabled={buttonDisabled}
               >
                 {buttonText}

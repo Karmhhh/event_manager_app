@@ -3,8 +3,15 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import img1 from "../Assets/ArtGalleryimg1.jpg";
+
 import img2 from "../Assets/ArtGalleryimg2.jpg";
 import img3 from "../Assets/ArtGalleryimg3.jpg";
+import img4 from "../Assets/ArtGalleryimg4.jpg";
+import img5 from "../Assets/ArtGalleryimg5.jpg";
+import img6 from "../Assets/ArtGalleryimg6.jpg";
+import img7 from "../Assets/ArtGalleryimg7.jpg";
+import imgclient from "../Assets/imgClient.jpg";
+import imgpromoter from "../Assets/ImgPromoter.jpg";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
@@ -25,10 +32,27 @@ const images = [
       " “Art has no era. It is the emotion that sleeps on pillows of eternity.” ",
     url: img1,
   },
-  { title: " “At the opera you know the master.” ", url: img2 },
   {
     title: " “Art is made to disturb, science to reassure.” ",
-    url: img3,
+   url: img2 
+  },
+  { title: " “At the opera you know the master.” ", url: img3,},
+
+  {
+    title: " “Art is contemplation.”  ",
+    url: img4,
+  },
+  {
+    title: " “Carving emptiness to give shape to thoughts”  ",
+    url: img5,
+  },
+  {
+    title: " “A sensory journey through notes that sculpt the imagination.”",
+    url: img6,
+  },
+  {
+    title: " “Cities transformed into open-air canvases.” ",
+    url: img7,
   },
 ];
 
@@ -84,7 +108,7 @@ export const Home = () => {
       <Box sx={{ display: { xs: "none", md: "block" } }}>
         <Grid container spacing={2} direction={"row"} className="row-img">
           <Grid item lg={4}>
-            <img src={img1} alt="img" />
+            <img src={imgclient} alt="img" />
           </Grid>
           <Grid item container direction={"column"} lg={3}>
             <Grid item md={4}>
@@ -179,7 +203,7 @@ export const Home = () => {
             </Grid>
           </Grid>
           <Grid item lg={4}>
-            <img src={img2} alt="img" />
+            <img src={imgpromoter} alt="img" />
           </Grid>
         </Grid>
         <Grid container spacing={1} direction={"row"} className="row-img">
