@@ -1,7 +1,7 @@
-import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Divider, Grid, Icon, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import img1 from "../Assets/ArtGalleryimg1.jpg";
 
 import img2 from "../Assets/ArtGalleryimg2.jpg";
@@ -21,6 +21,10 @@ import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import IconButton from "@mui/material/IconButton";
+import ReactLogo from "../Assets/logo192.png";
+import MuiIcon from "../Assets/muiIcon.png";
+import SpringBootIcon from "../Assets/springboot.png";
+import Rating from "./Components/Rating";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -34,9 +38,9 @@ const images = [
   },
   {
     title: " “Art is made to disturb, science to reassure.” ",
-   url: img2 
+    url: img2,
   },
-  { title: " “At the opera you know the master.” ", url: img3,},
+  { title: " “At the opera you know the master.” ", url: img3 },
 
   {
     title: " “Art is contemplation.”  ",
@@ -206,14 +210,56 @@ export const Home = () => {
             <img src={imgpromoter} alt="img" />
           </Grid>
         </Grid>
-        <Grid container spacing={1} direction={"row"} className="row-img">
+        {/* Qua Inizia per artist */}
+        <Grid container spacing={2} direction={"row"} className="row-img">
           <Grid item lg={4}>
             <img src={img3} alt="img" />
           </Grid>
-          <Grid item lg={7}>
-            <span> For Artists... Other features are coming soon.</span>
-          </Grid>{" "}
+          <Grid item container direction={"column"} lg={3}>
+            <Grid item md={4}>
+              <span>
+                <Typography
+                  component={"i"}
+                  variant="h3"
+                  style={{ display: "block" }}
+                >
+                  For Artists{" "}
+                </Typography>
+                <Typography component={"i"} variant="body1">
+                  "Explore the vibrant world of Art Event. From inspiring
+                  paintings to captivating sculptures, discover the unique
+                  vision of Artists. Find the perfect piece to bring creativity
+                  into your space. Join us on this artistic journey and immerse
+                  yourself in the boundless imagination of Art Event.
+                </Typography>
+              </span>
+            </Grid>
+
+            <Grid item container direction={"row"}>
+              <Grid item md={6}>
+                <Link
+                  key={"login"}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/loginartist`}
+                >
+                  <KeyboardDoubleArrowLeftIcon />{" "}
+                  <Typography textAlign="center"> {"Login"}</Typography>
+                </Link>
+              </Grid>
+              <Grid item md={6}>
+                <Link
+                  key={"SignUp"}
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/signUpArtist`}
+                >
+                  <KeyboardDoubleArrowRightIcon />{" "}
+                  <Typography textAlign="center"> {"Sign Up"}</Typography>
+                </Link>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
+        {/* Qua finisce per artist */}
       </Box>
 
       {/* mobile */}
@@ -265,6 +311,7 @@ export const Home = () => {
             }}
           ></Grid>
         </Grid>
+        {/* Qua inizia artist  */}
         <Grid
           container
           spacing={2}
@@ -275,45 +322,41 @@ export const Home = () => {
             item
             xs={7}
             style={{
-              background: `url(${img3})`,
+              background: `url(${img1})`,
               height: "10rem",
               backgroundSize: "cover",
             }}
           ></Grid>
           <Grid item xs={4}>
-            {" "}
             <span>
               <Typography component={"i"} variant={"h6"}>
-                For Artists... Other features are coming soon.
+                For Artist
               </Typography>
             </span>
           </Grid>{" "}
         </Grid>
+        {/* Qua finisce artist */}
       </Box>
       <footer style={{ backgroundColor: "black", color: "white" }}>
         <Stack
-          //contiene tutto
+          //contiene tutto e modificato cose
           direction={"row"}
           style={{ textAlign: "center" }}
-          marginTop={0.5}
+          padding={1}
         >
-          <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-            {theme.palette.mode === "dark" ? (
-              <Brightness7Icon />
-            ) : (
-              <Brightness4Icon />
-            )}
-          </IconButton>
-          <Divider orientation="vertical" flexItem />
-          <IconButton
-            color="inherit"
-            href="https://github.com/DavideDDA/event_manager_app"
-            target="_blank"
+          <Stack direction={"column"} spacing={1}>
+            <Typography variant={"h5"} component={"i"}>
+              Give us a Feedback!
+            </Typography>
+            <div style={{ margin: "auto" }}>
+              <Rating />
+            </div>
+          </Stack>
+          <Stack
+            direction={"column"}
+            style={{ maxWidth: "700px", margin: "auto" }}
           >
-            <GitHubIcon />
-          </IconButton>
-          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-            <Typography variant="h5" component={"b"}>
+            <Typography variant="h5" component={"i"}>
               About Us
             </Typography>
             <Slider {...sliderSettings}>
@@ -323,50 +366,54 @@ export const Home = () => {
                 </div>
               ))}
             </Slider>
-          </div>
-          <ul
-            style={{
-              listStyleType: "none",
-              textAlign: "center",
-              marginTop: 0,
-              marginRight: 15,
-              color: "gray",
-            }}
-          >
-            <h3 style={{ margin: "0px 0px 10px 0px" }}>Product</h3>
-            <li>React</li>
-            <li>Material UI</li>
-            <li>SpringBoot</li>
-          </ul>
+          </Stack>
+          {/*  */}
+          <Stack direction={"column"}>
+            <Typography variant="h5" component={"i"}>
+              Products
+            </Typography>
+            <Stack direction={"row"}>
+              <IconButton
+                color="inherit"
+                href="https://github.com/DavideDDA/event_manager_app"
+                target="_blank"
+              >
+                <GitHubIcon />
+              </IconButton>
+              <Divider
+                orientation="vertical"
+                flexItem
+                style={{ backgroundColor: "gray" }}
+              />
+              <IconButton
+                color="inherit"
+                href="https://react.dev/"
+                target="_blank"
+              >
+                <img src={ReactLogo} alt="react logo" width={"30rem"} />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                href="https://mui.com/"
+                target="_blank"
+              >
+                <img src={MuiIcon} alt="mui logo" width={"30rem"} />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                href="https://spring.io/projects/spring-boot/"
+                target="_blank"
+              >
+                <img
+                  src={SpringBootIcon}
+                  alt="springboot logo"
+                  width={"30rem"}
+                />
+              </IconButton>
+            </Stack>
+          </Stack>
         </Stack>
       </footer>
     </Stack>
   );
 };
-export default function ToggleColorMode() {
-  const [mode, setMode] = React.useState("light");
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    []
-  );
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <Home />
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  );
-}
