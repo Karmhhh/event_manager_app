@@ -18,6 +18,7 @@ import { RequestFormEventArtist } from "./pages/Modules/Forms/RequestFormArtist"
 import {
   LoginClients,
   LoginPromoters,
+  LoginAdmin,
   LoginArtist,
 } from "./pages/Modules/Forms/Login";
 import {
@@ -41,7 +42,7 @@ export default function App() {
           <Route path="/Artist" element={<Artist />} />
           <Route path="/PayPage" element={<PayPage />} />
           <Route path="/Contacts" element={<Contacts />} />
-          <Route path="/Catalog" element={<Catalog />} />
+          <Route path="/Events" element={<Catalog />} />
           <Route path="/RequestArtist" element={<RequestFormEventArtist />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Loginpromoters" element={<LoginPromoters />} />
@@ -52,8 +53,10 @@ export default function App() {
           <Route path="/EventPage" element={<EventPage />} />
           <Route path="/Account" element={<Account />} />
           <Route path="LoginArtist" element={<LoginArtist />} />
-          <Route path="SignUpArtist" element={<SignUpArtist />} />
 
+          <Route path="LoginAdmin" element={<LoginAdmin/>} />
+          <Route path="SignUpArtist" element={<SignUpArtist />} />
+          
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

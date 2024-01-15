@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -15,19 +16,18 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
-import { Grid, TextField, Stack } from "@mui/material";
+import { Grid, TextField, Stack, CardActions, Button } from "@mui/material";
+import HistoryIcon from '@mui/icons-material/History';
 import { EventCard } from "./Components/EventCard";
 import event1 from "../Assets/event1.jpg";
 import event2 from "../Assets/event2.jpg";
 import event3 from "../Assets/event3.jpg";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import eventImage from "../Assets/event3.jpg";
+import CardLarge from "./Components/CardLarge"
 import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-
+import Favorite from "@mui/icons-material/Favorite";
+import CardOpere from "./Components/CardOpere";
 const drawerWidth = 240;
 
 export function Account() {
@@ -45,12 +45,38 @@ export function Account() {
         return renderEventSection();
       case "Favorites":
         return renderFavoritesSection();
+        case "History of Events":
+          return renderhistoryEventsSection();
+          case "Opere":
+            return renderOpereSection();
+          
       case "Request":
         return <Request></Request>;
       default:
         return null;
     }
   };
+  const opere = [
+    {
+      nome: "venere",
+      organizzatore: "Marck jset",
+      descrizione: "lorem impsWEEEjdhuceh",
+      img: event1,
+    },
+    {
+      nome: "Bacio",
+      organizzatore: "Marck jset",
+
+      descrizione: "lorem impsWEEEjdhuceh",
+      img: event2,
+    },
+    {
+      nome: "Infinito",
+      organizzatore: "Marck jset",
+
+      descrizione: "lorem impsWEEEjdhuceh",
+      img: event3,
+    },]
   const events = [
     {
       nome: "Comicon",
@@ -144,38 +170,40 @@ export function Account() {
 
   const renderTicketSection = () => {
     return (
-      <div style={{ height: "auto", overflowY: "auto" }}>
         <Box
           style={{
-            margin: "5rem",
+            margin: "2rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "70vh",
-            padding: "1rem",
+            height: "85vh",
+            padding: "2rem",
             textAlign: "left",
+            overflowX: "scroll" 
           }}
         >
           <Typography variant="h5">Your Tickets</Typography>
           <hr />
-          <Stack
+          <div >
+            <Grid
+            container
             direction={"row"}
-            spacing={6}
-            justifyContent={"space-between"}
-            style={{ overflowY: "scroll", margin: "auto" }}
+            spacing={3}
+            justifyContent={"space-around"}
+            
           >
             {events.map((event) => (
-              <EventCard
+             <Grid item md={5}> <CardLarge
                 nome={event.nome}
                 organizzatore={event.organizzatore}
                 data={event.data}
                 prezzo={event.prezzo}
                 descrizione={event.descrizione}
                 img={event.img}
-              />
+              /></Grid>
             ))}
-          </Stack>
+          </Grid></div>
+         
         </Box>
-      </div>
     );
   };
 
@@ -216,24 +244,113 @@ export function Account() {
 
   const renderFavoritesSection = () => {
     return (
-      <Card style={{ marginTop: "30px", marginLeft: "30px" }}>
-        <CardMedia
-          component="img"
-          height="200"
-          image={eventImage}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Sarà davvero una torta?
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Se sei un appassionato di dolci e ami le sorprese, facciamo al caso
-            tuo!
-          </Typography>
-        </CardContent>
-      </Card>
-    );
+      <Box
+      style={{
+        margin: "2rem",
+        border: "groove 1px gray",
+        borderRadius: "10px",
+        height: "85vh",
+        padding: "2rem",
+        textAlign: "left",
+         overflowX: "scroll" 
+      }}
+    >
+      <Typography variant="h5">Favorites</Typography>
+      <hr />
+      <div >
+        <Grid
+        container
+        direction={"row"}
+        spacing={3}
+        justifyContent={"space-around"}
+        
+      >
+        {events.map((event) => (
+         <Grid item md={5}> <CardLarge
+            nome={event.nome}
+            organizzatore={event.organizzatore}
+            data={event.data}
+            prezzo={event.prezzo}
+            descrizione={event.descrizione}
+            img={event.img}
+          /></Grid>
+        ))}
+      </Grid></div>
+     
+    </Box>
+      );
+  };
+  const renderOpereSection = () => {
+    return (
+      <Box
+      style={{
+        margin: "2rem",
+        border: "groove 1px gray",
+        borderRadius: "10px",
+        height: "85vh",
+        padding: "2rem",
+        textAlign: "left",
+        overflowX: "scroll" 
+      }}
+    >
+      <Typography variant="h5">Opere</Typography>
+      <hr />
+      <div >
+        <Grid
+        container
+        direction={"row"}
+        spacing={3}
+        justifyContent={"space-around"}
+        
+      >
+        {opere.map((op) => (
+         <Grid item md={5}> <CardOpere
+            title={op.nome}
+            description={op.descrizione}
+          /></Grid>
+        ))}
+      </Grid></div>
+     
+    </Box>
+      );
+  };
+  const renderhistoryEventsSection= () => {
+    return (
+      <Box
+      style={{
+        margin: "2rem",
+        border: "groove 1px gray",
+        borderRadius: "10px",
+        height: "85vh",
+        padding: "2rem",
+        textAlign: "left",
+        overflowX: "scroll" 
+      }}
+    >
+      <Typography variant="h5">History of Events</Typography>
+      <hr />
+      <div >
+        <Grid
+        container
+        direction={"row"}
+        spacing={3}
+        justifyContent={"space-around"}
+        
+      >
+        {events.map((event) => (
+         <Grid item md={5}> <CardLarge
+            nome={event.nome}
+            organizzatore={event.organizzatore}
+            data={event.data}
+            prezzo={event.prezzo}
+            descrizione={event.descrizione}
+            img={event.img}
+          /></Grid>
+        ))}
+      </Grid></div>
+     
+    </Box>
+      );
   };
 
   const renderProfileSection = () => {
@@ -372,9 +489,10 @@ export function Account() {
       >
         <Toolbar />
         <Divider />
-        <Typography variant="h4" margin={2}>
-          My Account
+        <Typography variant="h5" >
+          My Account 
         </Typography>
+        <Typography variant="caption" style={{marginTop:'0px'}}> For all </Typography>
         <Divider />
         <List>
           {[
@@ -383,21 +501,43 @@ export function Account() {
               icon: <AccountBoxIcon style={{ color: "white" }} />,
             },
             {
-              text: "Tickets",
-              icon: <ConfirmationNumberIcon style={{ color: "white" }} />,
+              text: "Incoming Requests",
+              icon: <InsertDriveFileIcon style={{ color: "white" }} />,
             },
             {
-              text: "Event",
+              text: "Support",
+              icon: <HelpOutlineIcon style={{ color: "white" }} />,
+            }, 
+             {
+              text: "Proposed events",
               icon: <CalendarViewDayIcon style={{ color: "white" }} />,
+            }, 
+            
+            
+               {
+              text: "Tickets",
+              icon: <ConfirmationNumberIcon style={{ color: "white" }} />,
             },
             {
               text: "Favorites",
               icon: <FavoriteIcon style={{ color: "white" }} />,
             },
             {
+              text: "History of Events",
+              icon: <HistoryIcon style={{ color: "white" }} />,
+            },  {
+              text: "Opere",
+              icon: <CalendarViewDayIcon style={{ color: "white" }} />,
+            },
+            {
               text: "Request",
               icon: <InsertDriveFileIcon style={{ color: "white" }} />,
-            },
+            },  
+            
+         
+          
+           
+          
           ].map((item) => (
             <ListItem
               key={item.text}

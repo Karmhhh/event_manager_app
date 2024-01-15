@@ -15,12 +15,15 @@ import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom/";
 
 function ResponsiveAppBar() {
-  const [isAuth, setIsAuth] = React.useState(false);
+  const [isAuth, setIsAuth] = React.useState(true);
+  const [log, setLog] = React.useState('noLog');
+
+  const [visible, setVisible] = React.useState(false);
   const pages = [
-    { name: "Home" },
-    { name: "Catalog" },
-    { name: "Contacts" },
-    { name: "Account" },
+    { name: "Home", RoleAccess: ['Client','Admin','Promoter','Artist','noLog'] },
+    { name: "Events" , RoleAccess: ['Client','Admin','Promoter','Artist','noLog']  },
+    { name: "Contacts", RoleAccess: ['Client','Admin','Promoter','Artist','noLog']  },
+   /* { name: "Account", RoleAccess: ['Client','Admin','Promoter','Artist']  },*/
   ];
   const settings = [
     {
@@ -29,12 +32,12 @@ function ResponsiveAppBar() {
         console.log("profile");
       },
     },
-    {
+    /*{
       name: "Account",
       action: function () {
         console.log("Account");
       },
-    },
+    },*/
     {
       name: "Logout",
       action: function () {
@@ -45,6 +48,8 @@ function ResponsiveAppBar() {
   const logins = [
     { name: "Promoters", action: "/loginPromoters" },
     { name: "Clients", action: "/loginClients" },
+    { name: "Artist", action: "/loginArtist" },  
+    { name: "Admin", action: "/loginAdmin" },
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -126,17 +131,21 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <Link
-                  key={page.name}
-                  style={{ textDecoration: "none", color: "black" }}
-                  to={`/${page.name}`}
-                >
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography>{page.name}</Typography>
-                  </MenuItem>
-                </Link>
-              ))}
+              {pages.map((page) => {
+               //  {page.RoleAccess.map((e)=>{log === e ? setVisible(true) : setVisible(false)}) }
+           
+                  return(    
+                    <Link
+                      key={page.name}
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`/${page.name}`}
+                  
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography>{page.name}</Typography>
+                      </MenuItem>
+                    </Link>)
+                   })}
             </Menu>
           </Box>
 
@@ -172,35 +181,15 @@ function ResponsiveAppBar() {
           </Box>
 
           {isAuth ? (
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open Avatar">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar style={{ color: "white" }} alt="Your Avatar" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting.name} onClick={() => setting.action()}>
-                    <Typography>{setting.name}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+                   <Link
+                   style={{ textDecoration: "none" }}
+                   to={`/Account`}
+                   key={'Account'}
+                 >
+                   <Button sx={{ my: 2, color: "white", display: "block" }}>
+                     {'Account'}
+                   </Button>
+                 </Link>
           ) : (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open login">

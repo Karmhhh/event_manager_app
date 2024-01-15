@@ -1,5 +1,5 @@
 import { EventCard } from "./Components/EventCard";
-import Divider, { Typography } from "@mui/material";
+import Divider, { Typography,Grid } from "@mui/material";
 import { Box, Stack } from "@mui/material";
 import event1 from '../Assets/event1.jpg'
 import event2 from '../Assets/event2.jpg'
@@ -82,21 +82,24 @@ const events = [
 ]
 
     return(<>
-          <Box style={{
-            margin:'5rem', 
+          <Box 
+            style={{
+            margin:'3rem', 
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: '72vh',
+            height: '75vh',
             padding: '1rem',
-            textAlign: 'left'}}>
+            textAlign: 'left',
+            overflowX:'scroll'
+            }}>
             <Typography variant="h5">Our Events</Typography>
             <hr/>
-            <Stack direction={'row'} spacing={6} justifyContent={'space-between'} style={{overflowY:'scroll', margin:'3rem'}}>
+            <Grid margin={'4rem'} container direction={'row'} justifyContent={'space-around'} >
                 {events.map((event)=>(
-                  <EventCard emailOrganizzatore = {event.emailOrganizzatore} luogo={event.eventRegion} categoria={event.eventCategory} nome={event.eventName} organizzatore={event.eventPromoter} startDate={event.startDate}  endDate={event.endDate} prezzo={event.eventPrice} descrizione={event.eventDescription} img={event.img}/>
-                ))}
+                  <Grid item md={3}><EventCard emailOrganizzatore = {event.emailOrganizzatore} luogo={event.eventRegion} categoria={event.eventCategory} nome={event.eventName} organizzatore={event.eventPromoter} startDate={event.startDate}  endDate={event.endDate} prezzo={event.eventPrice} descrizione={event.eventDescription} img={event.img}/>
+                </Grid>))}
 
-            </Stack>
+            </Grid>
         </Box>
      
     
