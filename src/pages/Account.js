@@ -47,7 +47,7 @@ export function Account() {
         return renderFavoritesSection();
         case "History of Events":
           return renderhistoryEventsSection();
-          case "Opere":
+          case "Artistic Works":
             return renderOpereSection();
           
       case "Request":
@@ -293,7 +293,7 @@ export function Account() {
         overflowX: "scroll" 
       }}
     >
-      <Typography variant="h5">Opere</Typography>
+      <Typography variant="h5">Artistic Works</Typography>
       <hr />
       <div >
         <Grid
@@ -526,7 +526,7 @@ export function Account() {
               text: "History of Events",
               icon: <HistoryIcon style={{ color: "white" }} />,
             },  {
-              text: "Opere",
+              text: "Artistic Works",
               icon: <CalendarViewDayIcon style={{ color: "white" }} />,
             },
             {
