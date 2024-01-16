@@ -1,3 +1,3 @@
 export const NoPage = () => {
-    return(<>Nopagefound</>)
+  return <>Nopagefound</>;
 };

@@ -1,3 +1,3 @@
 export const Client = () => {
-    return(<>Client</>)
+  return <>Client</>;
 };

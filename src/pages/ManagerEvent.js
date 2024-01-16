@@ -1,3 +1,3 @@
 export const ManagerEvent = () => {
-    return(<>ManagerEvent</>)
+  return <>ManagerEvent</>;
 };

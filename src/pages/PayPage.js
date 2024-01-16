@@ -1,3 +1,3 @@
 export const PayPage = () => {
-    return(<>PayPage</>)
+  return <>PayPage</>;
 };

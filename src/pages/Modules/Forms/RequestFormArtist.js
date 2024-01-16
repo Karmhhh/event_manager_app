@@ -1,3 +1,3 @@
 export const RequestFormEventArtist = () => {
-    return(<>RequestFormEventArtist</>)
+  return <>RequestFormEventArtist</>;
 };

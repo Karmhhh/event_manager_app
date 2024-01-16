@@ -1,5 +1,5 @@
 import { useState } from "react";
-export const ImageOnOver = ({onFalse , onTrue, widthProp}) => {
+export const ImageOnOver = ({ onFalse, onTrue, widthProp }) => {
   const [over, setOver] = useState(false);
   return (
     <>

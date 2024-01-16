@@ -1,3 +1,3 @@
 export const Artist = () => {
-    return(<>SArtist</>)
+  return <>SArtist</>;
 };

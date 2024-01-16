@@ -65,12 +65,14 @@ export function LoginAdmin() {
                 direction={"row"}
                 justifyContent={"space-between"}
               >
-                <Grid item md={'4'}>
+                <Grid item md={"4"}>
                   {" "}
                   <Link href={"/forgotPassword"}>{"Forgot Password?"}</Link>
                 </Grid>
-                <Grid item  md={'5'}>
-                 <Link href={"/Contacts"} >{"Can't Login? Contact Support"}</Link>{" "}
+                <Grid item md={"5"}>
+                  <Link href={"/Contacts"}>
+                    {"Can't Login? Contact Support"}
+                  </Link>{" "}
                 </Grid>
               </Grid>
             </Stack>

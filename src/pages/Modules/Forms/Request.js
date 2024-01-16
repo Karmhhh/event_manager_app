@@ -60,13 +60,12 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 export const Request = () => {
-
   var data = new Date();
   var gg, mm, aaaa;
   gg = data.getDate() + "-";
   mm = data.getMonth() + 1 + "-";
   aaaa = data.getFullYear();
-  let today = gg + mm + aaaa
+  let today = gg + mm + aaaa;
 
   const themeEvent = useTheme();
   const [ourThemes, setOurThemes] = React.useState([]);
@@ -80,13 +79,12 @@ export const Request = () => {
   const [locationDescribe, setLocationDescribe] = useState("");
   const [maxCustomers, setMaxCustomers] = useState("");
   const [eventPrice, setEventPrice] = useState("");
-  const [eventName, setEventName] = useState(""); 
-  const [begin, setBegin] = React.useState(dayjs()); 
-  const [permissionDocumentPath, setPermissionDocumentPath] = useState(""); 
-  const [promoterIdCardPath, setPromoterIdCardPath] = useState(""); 
+  const [eventName, setEventName] = useState("");
+  const [begin, setBegin] = React.useState(dayjs());
+  const [permissionDocumentPath, setPermissionDocumentPath] = useState("");
+  const [promoterIdCardPath, setPromoterIdCardPath] = useState("");
   const [end, setEnd] = React.useState(dayjs());
-  
-  
+
   const [buttonText, setButtonText] = useState("Send");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const handleChange = (event) => {
@@ -95,13 +93,13 @@ export const Request = () => {
     } = event;
     setOurThemes(
       // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
+      typeof value === "string" ? value.split(",") : value,
     );
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSendTicket()
+    handleSendTicket();
   };
   const handleSendTicket = () => {
     alert("Sended! Check your email!");
@@ -132,7 +130,7 @@ export const Request = () => {
           width: "40rem",
           padding: "1rem",
           backgroundColor: "rgba(255, 255, 255, 0.7)",
-          margin:'2rem auto'
+          margin: "2rem auto",
         }}
       >
         <div>
@@ -155,14 +153,14 @@ export const Request = () => {
               </Grid>
               <Grid item md="4">
                 <TextField
-                required
+                  required
                   id="outlined-required"
                   label="Describe Event"
                   onChange={(e) => setDescribe(e.target.value)}
                   style={{ width: "90%" }}
                 />
               </Grid>
-              
+
               <Grid item md="4">
                 <TextField
                   required
@@ -192,7 +190,7 @@ export const Request = () => {
               </Grid>
               <Grid item md="4">
                 <TextField
-                required
+                  required
                   id="outlined-required"
                   label="Describe Location"
                   onChange={(e) => setLocationDescribe(e.target.value)}
@@ -263,7 +261,7 @@ export const Request = () => {
                   </DemoContainer>
                 </LocalizationProvider>
               </Grid>
-            
+
               <Grid item md="12">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer
@@ -278,16 +276,17 @@ export const Request = () => {
                 </LocalizationProvider>
               </Grid>
               <Grid item md="4">
-                <Typography fontStyle={"italic"}>
-                  Event Image
-                </Typography>
+                <Typography fontStyle={"italic"}>Event Image</Typography>
                 <Button
                   component="label"
                   variant="contained"
                   startIcon={<CloudUploadIcon />}
-                  >
+                >
                   Upload file
-                  <VisuallyHiddenInput type="file" onChange={(e)=>setPic(e.target.files[0])}/>
+                  <VisuallyHiddenInput
+                    type="file"
+                    onChange={(e) => setPic(e.target.files[0])}
+                  />
                 </Button>
               </Grid>
               <Grid item md="4">
@@ -300,8 +299,12 @@ export const Request = () => {
                   startIcon={<CloudUploadIcon />}
                 >
                   Upload file
-                  <VisuallyHiddenInput type="file" onChange={(e)=>setPermissionDocumentPath(e.target.files[0])}/>
-                
+                  <VisuallyHiddenInput
+                    type="file"
+                    onChange={(e) =>
+                      setPermissionDocumentPath(e.target.files[0])
+                    }
+                  />
                 </Button>
               </Grid>
               <Grid item md="4">
@@ -312,8 +315,10 @@ export const Request = () => {
                   startIcon={<CloudUploadIcon />}
                 >
                   Upload file
-                  <VisuallyHiddenInput type="file" onChange={(e)=>setPromoterIdCardPath(e.target.files[0])}/>
-                
+                  <VisuallyHiddenInput
+                    type="file"
+                    onChange={(e) => setPromoterIdCardPath(e.target.files[0])}
+                  />
                 </Button>
               </Grid>
             </Grid>
@@ -331,10 +336,9 @@ export const Request = () => {
             </Grid>
             <Grid item md="4">
               <Button
-               type="submit"
+                type="submit"
                 variant="outlined"
                 size="large"
-           
                 disabled={buttonDisabled}
               >
                 {buttonText}

@@ -16,17 +16,12 @@ import { Link } from "react-router-dom/";
 function ResponsiveAppBar() {
   const [isAuth, setIsAuth] = React.useState(true);
 
-  const pages = [
-    { name: "Home"},
-    { name: "Events"},
-    { name: "Contacts"},
- 
-  ];
- 
+  const pages = [{ name: "Home" }, { name: "Events" }, { name: "Contacts" }];
+
   const logins = [
     { name: "Promoters", action: "/loginPromoters" },
     { name: "Clients", action: "/loginClients" },
-    { name: "Artist", action: "/loginArtist" },  
+    { name: "Artist", action: "/loginArtist" },
     { name: "Admin", action: "/loginAdmin" },
   ];
 
@@ -47,8 +42,6 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-
 
   return (
     <AppBar
@@ -105,20 +98,20 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => {
-               //  {page.RoleAccess.map((e)=>{log === e ? setVisible(true) : setVisible(false)}) }
-           
-                  return(    
-                    <Link
-                      key={page.name}
-                      style={{ textDecoration: "none", color: "black" }}
-                      to={`/${page.name}`}
-                  
-                    >
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography>{page.name}</Typography>
-                      </MenuItem>
-                    </Link>)
-                   })}
+                //  {page.RoleAccess.map((e)=>{log === e ? setVisible(true) : setVisible(false)}) }
+
+                return (
+                  <Link
+                    key={page.name}
+                    style={{ textDecoration: "none", color: "black" }}
+                    to={`/${page.name}`}
+                  >
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography>{page.name}</Typography>
+                    </MenuItem>
+                  </Link>
+                );
+              })}
             </Menu>
           </Box>
 
@@ -154,15 +147,15 @@ function ResponsiveAppBar() {
           </Box>
 
           {isAuth ? (
-                   <Link
-                   style={{ textDecoration: "none" }}
-                   to={`/Account`}
-                   key={'Account'}
-                 >
-                   <Button sx={{ my: 2, color: "white", display: "block" }}>
-                     {'Account'}
-                   </Button>
-                 </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/Account`}
+              key={"Account"}
+            >
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                {"Account"}
+              </Button>
+            </Link>
           ) : (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open login">
