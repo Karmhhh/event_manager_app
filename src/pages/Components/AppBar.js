@@ -11,19 +11,16 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import LoginIcon from "@mui/icons-material/Login";
-import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom/";
 
 function ResponsiveAppBar() {
   const [isAuth, setIsAuth] = React.useState(true);
-  const [log, setLog] = React.useState('noLog');
 
-  const [visible, setVisible] = React.useState(false);
   const pages = [
-    { name: "Home", RoleAccess: ['Client','Admin','Promoter','Artist','noLog'] },
-    { name: "Events" , RoleAccess: ['Client','Admin','Promoter','Artist','noLog']  },
-    { name: "Contacts", RoleAccess: ['Client','Admin','Promoter','Artist','noLog']  },
-   /* { name: "Account", RoleAccess: ['Client','Admin','Promoter','Artist']  },*/
+    { name: "Home"},
+    { name: "Events"},
+    { name: "Contacts"},
+ 
   ];
  
   const logins = [

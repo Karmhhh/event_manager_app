@@ -30,6 +30,29 @@ import { EventPage } from "./pages/Components/EventPage";
 import { AccountAdmin,AccountClient,AccountPromoters,AccountArtist} from "./pages/Account";
 
 export default function App() {
+ 
+  const [roleLog,setRoleLog] = React.useState(<></>);
+  const [isAuth,setIsAuth] = React.useState(false);
+
+  const renderSection = (x) => {
+  switch (x){
+    case 'noLog':
+      setIsAuth(false);
+      break;
+    case 'client':
+      return <AccountClient/>;
+    case 'artist':
+      return <AccountArtist/>;
+    case 'promoter':
+      return <AccountPromoters/>;
+    
+    case 'admin':
+      return <AccountAdmin/>;
+   
+    default:
+        return null
+  }
+}
   return (
     //Usare il Router per consentire la navigazione tra le pagine all'interno della piattaforma
     <BrowserRouter>
@@ -54,8 +77,11 @@ export default function App() {
           <Route path="LoginAdmin" element={<LoginAdmin/>} />
           <Route path="SignUpArtist" element={<SignUpArtist />} />
           {/*Quando faccio il routing devo capire il ruolo dell utente e 
-          reindirizzarlo all'apposito Account per ora standard ho il Client TEMPORANEO*/}
-          <Route path="/Account" element={<AccountClient />} />
+          reindirizzarlo all'apposito Account per ora standard ho il Client, inserire nei parametri il ruolo per 
+          mostrare una section diversa
+          Passaggi: fai il login, identifica il ruolo dell'utente, metti il ruolo dell'utente nei parametri
+          */}
+          <Route path="/Account" element={renderSection('client')} />
 
           <Route path="*" element={<NoPage />} />
         </Route>
