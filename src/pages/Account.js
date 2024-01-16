@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import PaletteIcon from '@mui/icons-material/Palette';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -26,9 +27,121 @@ import CardLarge from "./Components/CardLarge"
 import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-import Favorite from "@mui/icons-material/Favorite";
+import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import CardOpere from "./Components/CardOpere";
 const drawerWidth = 240;
+
+const opere = [
+  {
+    nome: "venere",
+    organizzatore: "Marck jset",
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event1,
+  },
+  {
+    nome: "Bacio",
+    organizzatore: "Marck jset",
+
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event2,
+  },
+  {
+    nome: "Infinito",
+    organizzatore: "Marck jset",
+
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event3,
+  },]
+const events = [
+  {
+    nome: "Comicon",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 12$",
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event1,
+  },
+  {
+    nome: "Romix",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 17$",
+    descrizione: "loDXSCErem impsjdhuceh",
+    img: event2,
+  },
+  {
+    nome: "Lucca",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 10$",
+    descrizione: "lorem impsjdWFEEWEFhuceh",
+    img: event3,
+  },
+  {
+    nome: "comicon",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 12$",
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event1,
+  },
+  {
+    nome: "Romix",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 17$",
+    descrizione: "loDXSCErem impsjdhuceh",
+    img: event2,
+  },
+  {
+    nome: "Lucca",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 10$",
+    descrizione: "lorem impsjdWFEEWEFhuceh",
+    img: event3,
+  },
+  {
+    nome: "Comicon",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 12$",
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event1,
+  },
+  {
+    nome: "Romix",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 17$",
+    descrizione: "loDXSCErem impsjdhuceh",
+    img: event2,
+  },
+  {
+    nome: "Lucca",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 10$",
+    descrizione: "lorem impsjdWFEEWEFhuceh",
+    img: event3,
+  },
+  {
+    nome: "Comicon",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 12$",
+    descrizione: "lorem impsWEEEjdhuceh",
+    img: event1,
+  },
+  {
+    nome: "Romix",
+    organizzatore: "Marck jset",
+    data: "Sat, 03 May 22",
+    prezzo: " 17$",
+    descrizione: "loDXSCErem impsjdhuceh",
+    img: event2,
+  },
+];
 
 export function AccountClient() {
   const [currentSection, setCurrentSection] = useState("Profile");
@@ -49,118 +162,6 @@ export function AccountClient() {
         return null;
     }
   };
-  const opere = [
-    {
-      nome: "venere",
-      organizzatore: "Marck jset",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Bacio",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Infinito",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event3,
-    },]
-  const events = [
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-  ];
-
   const renderTicketSection = () => {
     return (
         <Box
@@ -487,117 +488,6 @@ export function AccountPromoters() {
         return null;
     }
   };
-  const opere = [
-    {
-      nome: "venere",
-      organizzatore: "Marck jset",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Bacio",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Infinito",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event3,
-    },]
-  const events = [
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-  ];
 
   const renderTicketSection = () => {
     return (
@@ -958,13 +848,9 @@ export function AccountPromoters() {
             },
             {
               text: "Send a Request",
-              icon: <InsertDriveFileIcon style={{ color: "white" }} />,
+              icon: <ForwardToInboxIcon style={{ color: "white" }} />,
             },  
             
-         
-          
-           
-          
           ].map((item) => (
             <ListItem
               key={item.text}
@@ -1012,118 +898,7 @@ export function AccountArtist() {
         return null;
     }
   };
-  const opere = [
-    {
-      nome: "venere",
-      organizzatore: "Marck jset",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Bacio",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Infinito",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event3,
-    },]
-  const events = [
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-  ];
-
+ 
   const renderTicketSection = () => {
     return (
         <Box
@@ -1469,15 +1244,15 @@ export function AccountArtist() {
               icon: <HistoryIcon style={{ color: "white" }} />,
             },  {
               text: "Artistic Works",
-              icon: <CalendarViewDayIcon style={{ color: "white" }} />,
+              icon: <PaletteIcon style={{ color: "white" }} />,
             },
             {
               text: "Attended Events",
-              icon: <InsertDriveFileIcon style={{ color: "white" }} />,
+              icon: <CalendarViewDayIcon style={{ color: "white" }} />,
             },  
             {
               text: "Request Participation",
-              icon: <InsertDriveFileIcon style={{ color: "white" }} />,
+              icon: <ForwardToInboxIcon style={{ color: "white" }} />,
             },  
             
          
@@ -1524,117 +1299,7 @@ export function AccountAdmin() {
         return null;
     }
   };
-  const opere = [
-    {
-      nome: "venere",
-      organizzatore: "Marck jset",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Bacio",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Infinito",
-      organizzatore: "Marck jset",
-
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event3,
-    },]
-  const events = [
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-    {
-      nome: "Lucca",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 10$",
-      descrizione: "lorem impsjdWFEEWEFhuceh",
-      img: event3,
-    },
-    {
-      nome: "Comicon",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 12$",
-      descrizione: "lorem impsWEEEjdhuceh",
-      img: event1,
-    },
-    {
-      nome: "Romix",
-      organizzatore: "Marck jset",
-      data: "Sat, 03 May 22",
-      prezzo: " 17$",
-      descrizione: "loDXSCErem impsjdhuceh",
-      img: event2,
-    },
-  ];
+  
   const renderIncomingReqSection = () => {
     return (
       <div style={{ height: "auto", overflowY: "auto" }}>
