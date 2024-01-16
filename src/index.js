@@ -13,7 +13,6 @@ import { Artist } from "./pages/Artist";
 import { PayPage } from "./pages/PayPage";
 import { Contacts } from "./pages/Contacts";
 import { Catalog } from "./pages/Catalog";
-import { Request } from "./pages/Modules/Forms/Request";
 import { RequestFormEventArtist } from "./pages/Modules/Forms/RequestFormArtist";
 import {
   LoginClients,
@@ -28,7 +27,7 @@ import {
 } from "./pages/Modules/Forms/Signup";
 import ForgotPassword from "./pages/Modules/Forms/ForgotPassword";
 import { EventPage } from "./pages/Components/EventPage";
-import { Account } from "./pages/Account";
+import { AccountAdmin,AccountClient,AccountPromoters,AccountArtist} from "./pages/Account";
 
 export default function App() {
   return (
@@ -51,12 +50,13 @@ export default function App() {
           <Route path="/SignUpclients" element={<SignUpClients />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/EventPage" element={<EventPage />} />
-          <Route path="/Account" element={<Account />} />
           <Route path="LoginArtist" element={<LoginArtist />} />
-
           <Route path="LoginAdmin" element={<LoginAdmin/>} />
           <Route path="SignUpArtist" element={<SignUpArtist />} />
-          
+          {/*Quando faccio il routing devo capire il ruolo dell utente e 
+          reindirizzarlo all'apposito Account per ora standard ho il Client TEMPORANEO*/}
+          <Route path="/Account" element={<AccountClient />} />
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

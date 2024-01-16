@@ -25,26 +25,7 @@ function ResponsiveAppBar() {
     { name: "Contacts", RoleAccess: ['Client','Admin','Promoter','Artist','noLog']  },
    /* { name: "Account", RoleAccess: ['Client','Admin','Promoter','Artist']  },*/
   ];
-  const settings = [
-    {
-      name: "Profile",
-      action: function () {
-        console.log("profile");
-      },
-    },
-    /*{
-      name: "Account",
-      action: function () {
-        console.log("Account");
-      },
-    },*/
-    {
-      name: "Logout",
-      action: function () {
-        setIsAuth(false);
-      },
-    },
-  ];
+ 
   const logins = [
     { name: "Promoters", action: "/loginPromoters" },
     { name: "Clients", action: "/loginClients" },
@@ -53,15 +34,12 @@ function ResponsiveAppBar() {
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [anchorEllogin, setAnchorEllogin] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
   const handleOpenloginMenu = (event) => {
     setAnchorEllogin(event.currentTarget);
   };
@@ -73,9 +51,7 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
 
   return (
     <AppBar
