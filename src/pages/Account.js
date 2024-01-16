@@ -23,7 +23,7 @@ import { EventCard } from "./Components/EventCard";
 import event1 from "../Assets/event1.jpg";
 import event2 from "../Assets/event2.jpg";
 import event3 from "../Assets/event3.jpg";
-import CardLarge from "./Components/CardLarge";
+import CardLarge from "./Components/CardFavorites";
 import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
@@ -55,92 +55,79 @@ const opere = [
 ];
 const events = [
   {
-    nome: "Comicon",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 12$",
-    descrizione: "lorem impsWEEEjdhuceh",
-    img: event1,
-  },
-  {
-    nome: "Romix",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 17$",
-    descrizione: "loDXSCErem impsjdhuceh",
-    img: event2,
-  },
-  {
-    nome: "Lucca",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 10$",
-    descrizione: "lorem impsjdWFEEWEFhuceh",
+    eventId: 4,
+    eventName: "Sarà davvero una torta?",
+    eventDescription:
+      "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+    maximumCapacity: 70,
+    startDate: "2024-05-20",
+    endDate: "2024-05-20",
+    eventCategory: "Cucina",
+    eventRegion: "Lazio",
+    eventPrice: "$ 23,54",
+    eventPromoter: "Mark Datels",
+    emailOrganizzatore: "Mark_Datels@exemple.xyz",
     img: event3,
   },
   {
-    nome: "comicon",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 12$",
-    descrizione: "lorem impsWEEEjdhuceh",
-    img: event1,
-  },
-  {
-    nome: "Romix",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 17$",
-    descrizione: "loDXSCErem impsjdhuceh",
-    img: event2,
-  },
-  {
-    nome: "Lucca",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 10$",
-    descrizione: "lorem impsjdWFEEWEFhuceh",
+    eventId: 4,
+    eventName: "Sarà davvero una torta?",
+    eventDescription:
+      "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+    maximumCapacity: 70,
+    startDate: "2024-05-20",
+    endDate: "2024-05-20",
+    eventCategory: "Cucina",
+    eventRegion: "Lazio",
+    eventPrice: "$ 23,54",
+    eventPromoter: "Mark Datels",
+    emailOrganizzatore: "Mark_Datels@exemple.xyz",
     img: event3,
   },
   {
-    nome: "Comicon",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 12$",
-    descrizione: "lorem impsWEEEjdhuceh",
-    img: event1,
-  },
-  {
-    nome: "Romix",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 17$",
-    descrizione: "loDXSCErem impsjdhuceh",
-    img: event2,
-  },
-  {
-    nome: "Lucca",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 10$",
-    descrizione: "lorem impsjdWFEEWEFhuceh",
+    eventId: 4,
+    eventName: "Sarà davvero una torta?",
+    eventDescription:
+      "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+    maximumCapacity: 70,
+    startDate: "2024-05-20",
+    endDate: "2024-05-20",
+    eventCategory: "Cucina",
+    eventRegion: "Lazio",
+    eventPrice: "$ 23,54",
+    eventPromoter: "Mark Datels",
+    emailOrganizzatore: "Mark_Datels@exemple.xyz",
     img: event3,
   },
   {
-    nome: "Comicon",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 12$",
-    descrizione: "lorem impsWEEEjdhuceh",
-    img: event1,
+    eventId: 4,
+    eventName: "Sarà davvero una torta?",
+    eventDescription:
+      "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+    maximumCapacity: 70,
+    startDate: "2024-05-20",
+    endDate: "2024-05-20",
+    eventCategory: "Cucina",
+    eventRegion: "Lazio",
+    eventPrice: "$ 23,54",
+    eventPromoter: "Mark Datels",
+    emailOrganizzatore: "Mark_Datels@exemple.xyz",
+    img: event3,
   },
   {
-    nome: "Romix",
-    organizzatore: "Marck jset",
-    data: "Sat, 03 May 22",
-    prezzo: " 17$",
-    descrizione: "loDXSCErem impsjdhuceh",
-    img: event2,
+    eventId: 4,
+    eventName: "Sarà davvero una torta?",
+    eventDescription:
+      "Se sei un appassionato di dolci e ami le sorprese, facciamo al caso tuo!",
+    maximumCapacity: 70,
+    startDate: "2024-05-20",
+    endDate: "2024-05-20",
+    eventCategory: "Cucina",
+    eventRegion: "Lazio",
+    eventPrice: "$ 23,54",
+    eventPromoter: "Mark Datels",
+    emailOrganizzatore: "Mark_Datels@exemple.xyz",
+    img: event3,
   },
 ];
 
@@ -184,18 +171,21 @@ export function AccountClient() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -226,18 +216,21 @@ export function AccountClient() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -273,7 +266,7 @@ export function AccountClient() {
             justifyContent={"space-around"}
           >
             {events.map((event) => (
-              <Grid item md={5}>
+              <Grid item>
                 {" "}
                 <CardLarge
                   nome={event.nome}
@@ -322,7 +315,7 @@ export function AccountClient() {
             spacing={3}
             style={{ justifyContent: "center" }}
           >
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Name"
@@ -332,7 +325,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Surname"
@@ -342,7 +335,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Date of Birth"
@@ -352,7 +345,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Email"
@@ -362,7 +355,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="City"
@@ -372,7 +365,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Nation"
@@ -382,7 +375,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Fiscal Code"
@@ -392,7 +385,7 @@ export function AccountClient() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Role"
@@ -517,18 +510,21 @@ export function AccountPromoters() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -559,18 +555,21 @@ export function AccountPromoters() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -606,7 +605,7 @@ export function AccountPromoters() {
             justifyContent={"space-around"}
           >
             {events.map((event) => (
-              <Grid item md={5}>
+              <Grid item>
                 {" "}
                 <CardLarge
                   nome={event.nome}
@@ -702,7 +701,7 @@ export function AccountPromoters() {
             spacing={3}
             style={{ justifyContent: "center" }}
           >
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Name"
@@ -712,7 +711,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Surname"
@@ -722,7 +721,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Date of Birth"
@@ -732,7 +731,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Email"
@@ -742,7 +741,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="City"
@@ -752,7 +751,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Nation"
@@ -762,7 +761,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Fiscal Code"
@@ -772,7 +771,7 @@ export function AccountPromoters() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Role"
@@ -909,18 +908,21 @@ export function AccountArtist() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -951,18 +953,21 @@ export function AccountArtist() {
           <Grid
             container
             direction={"row"}
-            spacing={3}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
-              <Grid item md={5}>
-                {" "}
-                <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
+              <Grid item>
+                <EventCard
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -998,15 +1003,19 @@ export function AccountArtist() {
             justifyContent={"space-around"}
           >
             {events.map((event) => (
-              <Grid item md={5}>
+              <Grid item>
                 {" "}
                 <CardLarge
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
-                  prezzo={event.prezzo}
-                  descrizione={event.descrizione}
-                  img={event.img}
+                 emailOrganizzatore={event.emailOrganizzatore}
+                 luogo={event.eventRegion}
+                 categoria={event.eventCategory}
+                 nome={event.eventName}
+                 organizzatore={event.eventPromoter}
+                 startDate={event.startDate}
+                 endDate={event.endDate}
+                 prezzo={event.eventPrice}
+                 descrizione={event.eventDescription}
+                 img={event.img}
                 />
               </Grid>
             ))}
@@ -1033,18 +1042,24 @@ export function AccountArtist() {
             overflowX: "scroll",
           }}
         >
-          <Grid
+            <Grid
             container
-            spacing={2}
             direction={"row"}
             justifyContent={"space-around"}
+            spacing={2}
           >
             {events.map((event) => (
               <Grid item>
                 <EventCard
-                  nome={event.nome}
-                  organizzatore={event.organizzatore}
-                  data={event.data}
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
                   img={event.img}
                 />
               </Grid>
@@ -1080,7 +1095,7 @@ export function AccountArtist() {
             justifyContent={"space-around"}
           >
             {opere.map((op) => (
-              <Grid item md={5}>
+              <Grid item>
                 {" "}
                 <CardOpere title={op.nome} description={op.descrizione} />
               </Grid>
@@ -1123,7 +1138,7 @@ export function AccountArtist() {
             spacing={3}
             style={{ justifyContent: "center" }}
           >
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Name"
@@ -1133,7 +1148,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Surname"
@@ -1143,7 +1158,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Date of Birth"
@@ -1153,7 +1168,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Email"
@@ -1163,7 +1178,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="City"
@@ -1173,7 +1188,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Nation"
@@ -1183,7 +1198,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Fiscal Code"
@@ -1193,7 +1208,7 @@ export function AccountArtist() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Role"
@@ -1381,7 +1396,7 @@ export function AccountAdmin() {
             spacing={3}
             style={{ justifyContent: "center" }}
           >
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Name"
@@ -1391,7 +1406,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Surname"
@@ -1401,7 +1416,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Date of Birth"
@@ -1411,7 +1426,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Email"
@@ -1421,7 +1436,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="City"
@@ -1431,7 +1446,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Nation"
@@ -1441,7 +1456,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Fiscal Code"
@@ -1451,7 +1466,7 @@ export function AccountAdmin() {
                 }}
               />
             </Grid>
-            <Grid item md="5">
+            <Grid item>
               <TextField
                 id="outlined-read-only-input"
                 label="Role"

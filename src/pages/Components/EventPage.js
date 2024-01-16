@@ -1,13 +1,11 @@
 import {
   Box,
-  Button,
   Card,
   Stack,
   CardContent,
   CardMedia,
   Grid,
   Typography,
-  Link,
   IconButton,
 } from "@mui/material";
 import * as React from "react";
@@ -17,7 +15,7 @@ import { useState, useEffect } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useLocation } from "react-router-dom";
-
+import PaymentsIcon from "@mui/icons-material/Payments";
 export function EventPage() {
   const locationR = useLocation();
   const [isFavorited, setIsFavorited] = useState(false);
@@ -32,9 +30,10 @@ export function EventPage() {
       direction="row"
       justifyContent="center"
       alignItems="center"
-      minHeight="100vh"
+      maxHeight="90vh"
+      margin={"0.5rem"}
     >
-      <Card sx={{ width: 800, height: 800, textAlign: "center" }}>
+      <Card sx={{ width: 800, height: "90vh", textAlign: "center" }}>
         <CardMedia
           component="img"
           height="400"
@@ -64,20 +63,23 @@ export function EventPage() {
           >
             {locationR.state.nome}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <hr style={{color:'lightgray', width:'70%'}}/>
+          <Typography variant="body1" color="text.secondary" 
+            style={{ marginTop: 20 }}>
             {locationR.state.descrizione}
           </Typography>
         </CardContent>
 
         {/*TICKET ZONE */}
         <CardContent
-          style={{ textAlign: "center", marginTop: "20px", padding: "30px" }}
+          style={{ textAlign: "right", margin: "1rem", padding: "2rem" }}
         >
-          <Typography variant="body1" color="text.primary">
+         
+          <hr style={{color:'lightgray'}}/>
+          <Typography variant="h6" color="text.primary">
             <b>Price: </b>
             {locationR.state.prezzo}
           </Typography>
-          <Button variant="outlined">Buy Now</Button>
         </CardContent>
       </Card>
 
@@ -86,7 +88,7 @@ export function EventPage() {
         style={{
           backgroundColor: `black`,
           marginLeft: 30,
-          height: 800,
+          height: "90vh",
           width: 400,
           display: "flex",
           flexDirection: "column",
@@ -240,11 +242,7 @@ export function EventPage() {
             marginTop: "100px",
           }}
         >
-          <Typography
-            variant="body1"
-            color="white"
-            style={{ marginLeft: "10px" }}
-          >
+          <Typography component={"div"} variant="body1" color="white">
             Add to favorites
           </Typography>
           <IconButton
@@ -257,6 +255,25 @@ export function EventPage() {
             ) : (
               <FavoriteBorderIcon style={{ fontSize: 30, color: "white" }} />
             )}
+          </IconButton>
+        </Box>
+        <Box
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "100px",
+          }}
+        >
+          <Typography component={"div"} variant="body1" color="white">
+            Buy Now
+          </Typography>
+          <IconButton
+            aria-label="buy now"
+            onClick={() => {}}
+            color={"white"}
+          >
+            <PaymentsIcon style={{ fontSize: 30, color: "white" }} />
           </IconButton>
         </Box>
       </Box>

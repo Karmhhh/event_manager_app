@@ -16,6 +16,7 @@ export function EventCard({
   const navigate = useNavigate();
   return (
     <Stack
+    margin={'1rem'}
       spacing={1}
       style={{
         width: "15rem",
