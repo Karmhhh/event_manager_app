@@ -1,4 +1,4 @@
-import { Box, Grid, TextField, Button } from "@mui/material";
+import { Box, Grid, TextField, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import im3 from "../Assets/background.jpg";
 
@@ -49,10 +49,12 @@ export const Contacts = () => {
         }}
         className={"center"}
         bgcolor={"aliceblue"}
-      >
-        <div>
-          <h2>{"Need help? ...Contact Us!"}</h2>
-          <form onSubmit={handleSubmit}>
+      >   
+       <form onSubmit={handleSubmit}>      
+         <Box style={{padding:'1rem'}}> 
+          <Typography variant={'h4'} component={'i'}>{"Need help?"}</Typography>
+          <Typography variant={'subtitle'} component={'div'}>{" Contact Us!"}</Typography>
+          </Box>
             <Grid
               container
               direction={"column"}
@@ -121,7 +123,6 @@ export const Contacts = () => {
               </Grid>
             </Grid>
           </form>
-        </div>
       </Box>
     </>
   );
