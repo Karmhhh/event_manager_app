@@ -82,27 +82,29 @@ const events = [
 ]
 
     return(<>
+            
+            <Typography variant="h4" component={'div'}  style={{margin:'1rem', }}>
+                Our Events <hr  style={{width:'70%',color:'lightgray' }}/>
+                </Typography>
+           
           <Box 
             style={{
-            margin:'3rem', 
+            margin:'0 2rem',
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: '75vh',
+            height: '70vh',
             padding: '1rem',
             textAlign: 'left',
             overflowX:'scroll'
             }}>
-            <Typography variant="h5">Our Events</Typography>
-            <hr/>
-            <Grid margin={'4rem'} container direction={'row'} justifyContent={'space-around'} >
+        
+              <Grid container direction={'row'} justifyContent={'space-around'} spacing={2}>
                 {events.map((event)=>(
-                  <Grid item md={3}><EventCard emailOrganizzatore = {event.emailOrganizzatore} luogo={event.eventRegion} categoria={event.eventCategory} nome={event.eventName} organizzatore={event.eventPromoter} startDate={event.startDate}  endDate={event.endDate} prezzo={event.eventPrice} descrizione={event.eventDescription} img={event.img}/>
+                  <Grid item ><EventCard emailOrganizzatore = {event.emailOrganizzatore} luogo={event.eventRegion} categoria={event.eventCategory} nome={event.eventName} organizzatore={event.eventPromoter} startDate={event.startDate}  endDate={event.endDate} prezzo={event.eventPrice} descrizione={event.eventDescription} img={event.img}/>
                 </Grid>))}
 
             </Grid>
-        </Box>
-     
-    
+            </Box>
     
     </>
       

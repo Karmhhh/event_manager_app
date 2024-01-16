@@ -7,8 +7,8 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import PaletteIcon from '@mui/icons-material/Palette';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import PaletteIcon from "@mui/icons-material/Palette";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -18,16 +18,16 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import { Grid, TextField, Stack, CardActions, Button } from "@mui/material";
-import HistoryIcon from '@mui/icons-material/History';
+import HistoryIcon from "@mui/icons-material/History";
 import { EventCard } from "./Components/EventCard";
 import event1 from "../Assets/event1.jpg";
 import event2 from "../Assets/event2.jpg";
 import event3 from "../Assets/event3.jpg";
-import CardLarge from "./Components/CardLarge"
+import CardLarge from "./Components/CardLarge";
 import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
 import CardOpere from "./Components/CardOpere";
 const drawerWidth = 240;
 
@@ -51,7 +51,8 @@ const opere = [
 
     descrizione: "lorem impsWEEEjdhuceh",
     img: event3,
-  },]
+  },
+];
 const events = [
   {
     nome: "Comicon",
@@ -157,130 +158,138 @@ export function AccountClient() {
         return renderFavoritesSection();
       case "History of Events":
         return renderhistoryEventsSection();
-  
+
       default:
         return null;
     }
   };
   const renderTicketSection = () => {
     return (
+      <Box style={{ display: "block" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "2rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "85vh",
+            height: "80vh",
             padding: "2rem",
             textAlign: "left",
-            overflowX: "scroll" 
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Tickets</Typography>
-          <hr />
-          <div >
-            <Grid
+          <Grid
             container
             direction={"row"}
             spacing={3}
             justifyContent={"space-around"}
-            
           >
             {events.map((event) => (
-             <Grid item md={5}> <CardLarge
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                prezzo={event.prezzo}
-                descrizione={event.descrizione}
-                img={event.img}
-              /></Grid>
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
             ))}
-          </Grid></div>
-         
+          </Grid>
         </Box>
+      </Box>
+    );
+  };
+  const renderhistoryEventsSection = () => {
+    return (
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          History Events <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            direction={"row"}
+            spacing={3}
+            justifyContent={"space-around"}
+          >
+            {events.map((event) => (
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
     );
   };
 
- 
-
   const renderFavoritesSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-         overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Favorites</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
-  };
- 
-  const renderhistoryEventsSection= () => {
-    return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-        overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">History of Events</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
-  };
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Favorites <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
 
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            direction={"row"}
+            spacing={3}
+            justifyContent={"space-around"}
+          >
+            {events.map((event) => (
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
+    );
+  };
   const renderProfileSection = () => {
     return (
       <Box
@@ -417,10 +426,11 @@ export function AccountClient() {
       >
         <Toolbar />
         <Divider />
-        <Typography variant="h5" >
-          My Account 
+        <Typography variant="h5">My Account</Typography>
+        <Typography variant="caption" style={{ marginTop: "0px" }}>
+          {" "}
+          For Clients{" "}
         </Typography>
-        <Typography variant="caption" style={{marginTop:'0px'}}> For Clients </Typography>
         <Divider />
         <List>
           {[
@@ -439,7 +449,7 @@ export function AccountClient() {
             {
               text: "History of Events",
               icon: <HistoryIcon style={{ color: "white" }} />,
-            },          
+            },
           ].map((item) => (
             <ListItem
               key={item.text}
@@ -459,9 +469,6 @@ export function AccountClient() {
     </Box>
   );
 }
-
-
-
 
 export function AccountPromoters() {
   const [currentSection, setCurrentSection] = useState("Profile");
@@ -477,10 +484,10 @@ export function AccountPromoters() {
       case "Favorites":
         return renderFavoritesSection();
       case "History of Events":
-        return renderhistoryEventsSection(); 
+        return renderhistoryEventsSection();
       case "Proposed Events":
         return renderProposedEventsSection();
-      case "Incoming Reequests":
+      case "Incoming Requests":
         return renderIncomingReqSection();
       case "Send a Request":
         return <Request></Request>;
@@ -491,192 +498,176 @@ export function AccountPromoters() {
 
   const renderTicketSection = () => {
     return (
+      <Box style={{ display: "block" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "2rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "85vh",
+            height: "80vh",
             padding: "2rem",
             textAlign: "left",
-            overflowX: "scroll" 
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Tickets</Typography>
-          <hr />
-          <div >
-            <Grid
+          <Grid
             container
             direction={"row"}
             spacing={3}
             justifyContent={"space-around"}
-            
           >
             {events.map((event) => (
-             <Grid item md={5}> <CardLarge
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                prezzo={event.prezzo}
-                descrizione={event.descrizione}
-                img={event.img}
-              /></Grid>
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
             ))}
-          </Grid></div>
-         
+          </Grid>
         </Box>
+      </Box>
     );
   };
-
-  const renderProposedEventsSection = () => {
+  const renderhistoryEventsSection = () => {
     return (
-      <div style={{ height: "auto", overflowY: "auto" }}>
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          History Events <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "5rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "70vh",
-            padding: "1rem",
+            height: "80vh",
+            padding: "2rem",
             textAlign: "left",
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Events</Typography>
-          <hr />
-          <Stack
+          <Grid
+            container
             direction={"row"}
-            spacing={6}
-            justifyContent={"space-between"}
-            style={{ overflowY: "scroll", margin: "auto" }}
+            spacing={3}
+            justifyContent={"space-around"}
           >
             {events.map((event) => (
-              <EventCard
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                img={event.img}
-              />
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
             ))}
-          </Stack>
+          </Grid>
         </Box>
-      </div>
+      </Box>
     );
   };
 
   const renderFavoritesSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-         overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Favorites</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Favorites <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            direction={"row"}
+            spacing={3}
+            justifyContent={"space-around"}
+          >
+            {events.map((event) => (
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
+    );
   };
+  const renderProposedEventsSection = () => {
+    return (
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Proposed Event <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "1rem",
+            textAlign: "left",
+          }}
+        >
+          No requests found
+        </Box>
+      </Box>
+    );
+  };
+
   const renderIncomingReqSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-         overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Incoming Requests</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
-  };
- 
-  const renderhistoryEventsSection= () => {
-    return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-        overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">History of Events</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Incoming Requests <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          no data found
+        </Box>
+      </Box>
+    );
   };
 
   const renderProfileSection = () => {
@@ -815,10 +806,11 @@ export function AccountPromoters() {
       >
         <Toolbar />
         <Divider />
-        <Typography variant="h5" >
-          My Account 
+        <Typography variant="h5">My Account</Typography>
+        <Typography variant="caption" style={{ marginTop: "0px" }}>
+          {" "}
+          For Promoters{" "}
         </Typography>
-        <Typography variant="caption" style={{marginTop:'0px'}}> For Promoters </Typography>
         <Divider />
         <List>
           {[
@@ -839,9 +831,9 @@ export function AccountPromoters() {
               icon: <HistoryIcon style={{ color: "white" }} />,
             },
             {
-              text: "Proposed events",
+              text: "Proposed Events",
               icon: <CalendarViewDayIcon style={{ color: "white" }} />,
-            }, 
+            },
             {
               text: "Incoming Requests",
               icon: <InsertDriveFileIcon style={{ color: "white" }} />,
@@ -849,8 +841,7 @@ export function AccountPromoters() {
             {
               text: "Send a Request",
               icon: <ForwardToInboxIcon style={{ color: "white" }} />,
-            },  
-            
+            },
           ].map((item) => (
             <ListItem
               key={item.text}
@@ -870,8 +861,6 @@ export function AccountPromoters() {
     </Box>
   );
 }
-
-
 
 export function AccountArtist() {
   const [currentSection, setCurrentSection] = useState("Profile");
@@ -887,201 +876,219 @@ export function AccountArtist() {
       case "Favorites":
         return renderFavoritesSection();
       case "History of Events":
-          return renderhistoryEventsSection();
+        return renderhistoryEventsSection();
       case "Artistic Works":
-          return renderOpereSection();
-      case "Attended Event":
-          return renderAttendedEventSection();
+        return renderOpereSection();
+      case "Attended Events":
+        return renderAttendedEventSection();
       case "Request Participation":
         return <Request></Request>;
       default:
         return null;
     }
   };
- 
+
   const renderTicketSection = () => {
     return (
+      <Box style={{ display: "block" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "2rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "85vh",
+            height: "80vh",
             padding: "2rem",
             textAlign: "left",
-            overflowX: "scroll" 
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Tickets</Typography>
-          <hr />
-          <div >
-            <Grid
+          <Grid
             container
             direction={"row"}
             spacing={3}
             justifyContent={"space-around"}
-            
           >
             {events.map((event) => (
-             <Grid item md={5}> <CardLarge
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                prezzo={event.prezzo}
-                descrizione={event.descrizione}
-                img={event.img}
-              /></Grid>
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
             ))}
-          </Grid></div>
-         
+          </Grid>
         </Box>
+      </Box>
     );
   };
-
-  const renderAttendedEventSection = () => {
+  const renderhistoryEventsSection = () => {
     return (
-      <div style={{ height: "auto", overflowY: "auto" }}>
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          History Events <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "5rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "70vh",
-            padding: "1rem",
+            height: "80vh",
+            padding: "2rem",
             textAlign: "left",
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Events</Typography>
-          <hr />
-          <Stack
+          <Grid
+            container
             direction={"row"}
-            spacing={6}
-            justifyContent={"space-between"}
-            style={{ overflowY: "scroll", margin: "auto" }}
+            spacing={3}
+            justifyContent={"space-around"}
           >
             {events.map((event) => (
-              <EventCard
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                img={event.img}
-              />
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
             ))}
-          </Stack>
+          </Grid>
         </Box>
-      </div>
+      </Box>
     );
   };
 
   const renderFavoritesSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-         overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Favorites</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Favorites <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            direction={"row"}
+            spacing={3}
+            justifyContent={"space-around"}
+          >
+            {events.map((event) => (
+              <Grid item md={5}>
+                {" "}
+                <CardLarge
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  prezzo={event.prezzo}
+                  descrizione={event.descrizione}
+                  img={event.img}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
+    );
   };
+  const renderAttendedEventSection = () => {
+    return (
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Attended Events <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "1rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            spacing={2}
+            direction={"row"}
+            justifyContent={"space-around"}
+          >
+            {events.map((event) => (
+              <Grid item>
+                <EventCard
+                  nome={event.nome}
+                  organizzatore={event.organizzatore}
+                  data={event.data}
+                  img={event.img}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
+    );
+  };
+
   const renderOpereSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-        overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Artistic Works</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {opere.map((op) => (
-         <Grid item md={5}> <CardOpere
-            title={op.nome}
-            description={op.descrizione}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
-  };
-  const renderhistoryEventsSection= () => {
-    return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-        overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">History of Events</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Artistic Works <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          <Grid
+            container
+            direction={"row"}
+            spacing={3}
+            justifyContent={"space-around"}
+          >
+            {opere.map((op) => (
+              <Grid item md={5}>
+                {" "}
+                <CardOpere title={op.nome} description={op.descrizione} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
+    );
   };
 
   const renderProfileSection = () => {
@@ -1220,10 +1227,11 @@ export function AccountArtist() {
       >
         <Toolbar />
         <Divider />
-        <Typography variant="h5" >
-          My Account 
+        <Typography variant="h5">My Account</Typography>
+        <Typography variant="caption" style={{ marginTop: "0px" }}>
+          {" "}
+          For Artists{" "}
         </Typography>
-        <Typography variant="caption" style={{marginTop:'0px'}}> For Artists </Typography>
         <Divider />
         <List>
           {[
@@ -1242,23 +1250,19 @@ export function AccountArtist() {
             {
               text: "History of Events",
               icon: <HistoryIcon style={{ color: "white" }} />,
-            },  {
+            },
+            {
               text: "Artistic Works",
               icon: <PaletteIcon style={{ color: "white" }} />,
             },
             {
               text: "Attended Events",
               icon: <CalendarViewDayIcon style={{ color: "white" }} />,
-            },  
+            },
             {
               text: "Request Participation",
               icon: <ForwardToInboxIcon style={{ color: "white" }} />,
-            },  
-            
-         
-          
-           
-          
+            },
           ].map((item) => (
             <ListItem
               key={item.text}
@@ -1278,9 +1282,6 @@ export function AccountArtist() {
     </Box>
   );
 }
-
-
-
 
 export function AccountAdmin() {
   const [currentSection, setCurrentSection] = useState("Profile");
@@ -1299,81 +1300,54 @@ export function AccountAdmin() {
         return null;
     }
   };
-  
+
   const renderIncomingReqSection = () => {
     return (
-      <div style={{ height: "auto", overflowY: "auto" }}>
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Incoming Requests <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
         <Box
           style={{
-            margin: "5rem",
+            margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "70vh",
-            padding: "1rem",
+            height: "80vh",
+            padding: "2rem",
             textAlign: "left",
+            overflowX: "scroll",
           }}
         >
-          <Typography variant="h5">Your Events</Typography>
-          <hr />
-          <Stack
-            direction={"row"}
-            spacing={6}
-            justifyContent={"space-between"}
-            style={{ overflowY: "scroll", margin: "auto" }}
-          >
-            {events.map((event) => (
-              <EventCard
-                nome={event.nome}
-                organizzatore={event.organizzatore}
-                data={event.data}
-                img={event.img}
-              />
-            ))}
-          </Stack>
+          no data found
         </Box>
-      </div>
+      </Box>
     );
   };
 
   const renderSupportSection = () => {
     return (
-      <Box
-      style={{
-        margin: "2rem",
-        border: "groove 1px gray",
-        borderRadius: "10px",
-        height: "85vh",
-        padding: "2rem",
-        textAlign: "left",
-         overflowX: "scroll" 
-      }}
-    >
-      <Typography variant="h5">Favorites</Typography>
-      <hr />
-      <div >
-        <Grid
-        container
-        direction={"row"}
-        spacing={3}
-        justifyContent={"space-around"}
-        
-      >
-        {events.map((event) => (
-         <Grid item md={5}> <CardLarge
-            nome={event.nome}
-            organizzatore={event.organizzatore}
-            data={event.data}
-            prezzo={event.prezzo}
-            descrizione={event.descrizione}
-            img={event.img}
-          /></Grid>
-        ))}
-      </Grid></div>
-     
-    </Box>
-      );
+      <Box style={{ display: "block", width: "100%" }}>
+        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+          Support <hr style={{ width: "70%", color: "lightgray" }} />
+        </Typography>
+
+        <Box
+          style={{
+            margin: "1rem",
+            border: "groove 1px gray",
+            borderRadius: "10px",
+            height: "80vh",
+            padding: "2rem",
+            textAlign: "left",
+            overflowX: "scroll",
+          }}
+        >
+          no data found
+        </Box>
+      </Box>
+    );
   };
- 
 
   const renderProfileSection = () => {
     return (
@@ -1511,10 +1485,11 @@ export function AccountAdmin() {
       >
         <Toolbar />
         <Divider />
-        <Typography variant="h5" >
-          My Account 
+        <Typography variant="h5">My Account</Typography>
+        <Typography variant="caption" style={{ marginTop: "0px" }}>
+          {" "}
+          For Administrator{" "}
         </Typography>
-        <Typography variant="caption" style={{marginTop:'0px'}}> For Administrator </Typography>
         <Divider />
         <List>
           {[
@@ -1529,8 +1504,7 @@ export function AccountAdmin() {
             {
               text: "Support",
               icon: <HelpOutlineIcon style={{ color: "white" }} />,
-            }, 
-          
+            },
           ].map((item) => (
             <ListItem
               key={item.text}
