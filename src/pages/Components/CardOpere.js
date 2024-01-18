@@ -10,10 +10,10 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 function CardOpere({ description, title, id }) {
   const navigate = useNavigate();
   return (
-    <Card style={{ width: "20rem", textAlign: "center" }}>
+    <Card style={{ width: "15rem",textAlign: "left" }}>
       <CardMedia
         component="img"
-        height="200"
+        height="100"
         image={eventImage}
         alt="green iguana"
       />
@@ -21,7 +21,7 @@ function CardOpere({ description, title, id }) {
         <Grid item>
           {" "}
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h7" component="div">
               {title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -29,12 +29,10 @@ function CardOpere({ description, title, id }) {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item>
-          <Divider orientation="vertical" />
-        </Grid>
+      
         <Grid item>
           {" "}
-          <Stack direction={"column"} spacing={2} justifyContent={"space-around"}>
+          <Stack direction={"column"} spacing={1} justifyContent={"space-between"}>
             <IconButton aria-label="edit" color="primary">
               <BorderColorIcon />
             </IconButton>

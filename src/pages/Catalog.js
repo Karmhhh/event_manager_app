@@ -85,7 +85,7 @@ export const Catalog = () => {
 
   return (
     <>
-      <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+      <Typography variant="h4" component={"div"} style={{ margin: "0.5rem" }}>
         Our Events <hr style={{ width: "70%", color: "lightgray" }} />
       </Typography>
 
@@ -95,7 +95,6 @@ export const Catalog = () => {
           border: "groove 1px gray",
           borderRadius: "10px",
           height: "70vh",
-          padding: "1rem",
           textAlign: "left",
           overflowX: "scroll",
         }}

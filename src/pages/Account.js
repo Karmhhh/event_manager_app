@@ -7,18 +7,11 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import PaletteIcon from "@mui/icons-material/Palette";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
-import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
-import { Grid, TextField, Stack, CardActions, Button } from "@mui/material";
-import HistoryIcon from "@mui/icons-material/History";
+import { Grid, TextField, Stack, CardActions, Button, IconButton } from "@mui/material";
 import { EventCard } from "./Components/EventCard";
 import event1 from "../Assets/event1.jpg";
 import event2 from "../Assets/event2.jpg";
@@ -26,9 +19,22 @@ import event3 from "../Assets/event3.jpg";
 import CardLarge from "./Components/CardFavorites";
 import { Request } from "./Modules/Forms/Request";
 import { useTheme } from "@mui/material/styles";
+
+import CardOpere from "./Components/CardOpere";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import {Link} from 'react-router-dom';
+import AccountMenu from "./Components/AccountMenu";
+import { useMediaQuery } from 'react-responsive';
+import PaletteIcon from "@mui/icons-material/Palette";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
-import CardOpere from "./Components/CardOpere";
+import HistoryIcon from "@mui/icons-material/History";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
+
 const drawerWidth = 240;
 
 const opere = [
@@ -150,11 +156,14 @@ export function AccountClient() {
         return null;
     }
   };
+  
   const renderTicketSection = () => {
     return (
       <Box style={{ display: "block" }}>
         <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
-          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+          Tickets 
+          <Link to={"../events"} style={{float:'right'}}><IconButton  color="success" fontSize={'inherit'}><AddCircleOutlineIcon /></IconButton></Link>
+          <hr style={{ width: "70%", color: "lightgray" }} />
         </Typography>
 
         <Box
@@ -207,7 +216,7 @@ export function AccountClient() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -253,7 +262,7 @@ export function AccountClient() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -400,10 +409,30 @@ export function AccountClient() {
       </Box>
     );
   };
+const listOptions = [
+  {
+    text: "Profile",
+    icon: <AccountBoxIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Tickets",
+    icon: <ConfirmationNumberIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Favorites",
+    icon: <FavoriteIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "History of Events",
+    icon: <HistoryIcon style={{ color: "white" }} />,
+  },
+]
+
+const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: isMobile ? "block" :"flex" }}>
       <CssBaseline />
-      <Drawer
+      {isMobile ? <AccountMenu currentSection={currentSection} listOptions={listOptions}/>:<Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -456,8 +485,7 @@ export function AccountClient() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
-      <Toolbar />
+      </Drawer>}
       {renderSection()}
     </Box>
   );
@@ -488,12 +516,14 @@ export function AccountPromoters() {
         return null;
     }
   };
-
+   
   const renderTicketSection = () => {
     return (
       <Box style={{ display: "block" }}>
         <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
-          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+          Tickets 
+          <Link to={"../events"} style={{float:'right'}}><IconButton  color="success" fontSize={'inherit'}><AddCircleOutlineIcon /></IconButton></Link>
+          <hr style={{ width: "70%", color: "lightgray" }} />
         </Typography>
 
         <Box
@@ -546,7 +576,7 @@ export function AccountPromoters() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -592,7 +622,7 @@ export function AccountPromoters() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -634,7 +664,7 @@ export function AccountPromoters() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "1rem",
             textAlign: "left",
           }}
@@ -657,7 +687,7 @@ export function AccountPromoters() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -786,10 +816,41 @@ export function AccountPromoters() {
       </Box>
     );
   };
+  const listOptions = [
+    {
+      text: "Profile",
+      icon: <AccountBoxIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "Tickets",
+      icon: <ConfirmationNumberIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "Favorites",
+      icon: <FavoriteIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "History of Events",
+      icon: <HistoryIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "Proposed Events",
+      icon: <CalendarViewDayIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "Incoming Requests",
+      icon: <InsertDriveFileIcon style={{ color: "white" }} />,
+    },
+    {
+      text: "Send a Request",
+      icon: <ForwardToInboxIcon style={{ color: "white" }} />,
+    },
+  ]
+const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{display: isMobile ? "block" :"flex"  }}>
       <CssBaseline />
-      <Drawer
+      {isMobile? <AccountMenu currentSection={currentSection} setCurrentSection={setCurrentSection}  listOptions={listOptions}/>:<Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -854,8 +915,7 @@ export function AccountPromoters() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
-      <Toolbar />
+      </Drawer>}
       {renderSection()}
     </Box>
   );
@@ -886,12 +946,13 @@ export function AccountArtist() {
         return null;
     }
   };
-
-  const renderTicketSection = () => {
+   const renderTicketSection = () => {
     return (
       <Box style={{ display: "block" }}>
         <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
-          Tickets <hr style={{ width: "70%", color: "lightgray" }} />
+          Tickets 
+          <Link to={"../events"} style={{float:'right'}}><IconButton  color="success" fontSize={'inherit'}><AddCircleOutlineIcon /></IconButton></Link>
+          <hr style={{ width: "70%", color: "lightgray" }} />
         </Typography>
 
         <Box
@@ -944,7 +1005,7 @@ export function AccountArtist() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -990,7 +1051,7 @@ export function AccountArtist() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -1006,16 +1067,16 @@ export function AccountArtist() {
               <Grid item>
                 {" "}
                 <CardLarge
-                 emailOrganizzatore={event.emailOrganizzatore}
-                 luogo={event.eventRegion}
-                 categoria={event.eventCategory}
-                 nome={event.eventName}
-                 organizzatore={event.eventPromoter}
-                 startDate={event.startDate}
-                 endDate={event.endDate}
-                 prezzo={event.eventPrice}
-                 descrizione={event.eventDescription}
-                 img={event.img}
+                  emailOrganizzatore={event.emailOrganizzatore}
+                  luogo={event.eventRegion}
+                  categoria={event.eventCategory}
+                  nome={event.eventName}
+                  organizzatore={event.eventPromoter}
+                  startDate={event.startDate}
+                  endDate={event.endDate}
+                  prezzo={event.eventPrice}
+                  descrizione={event.eventDescription}
+                  img={event.img}
                 />
               </Grid>
             ))}
@@ -1036,13 +1097,13 @@ export function AccountArtist() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "1rem",
             textAlign: "left",
             overflowX: "scroll",
           }}
         >
-            <Grid
+          <Grid
             container
             direction={"row"}
             justifyContent={"space-around"}
@@ -1073,16 +1134,18 @@ export function AccountArtist() {
   const renderOpereSection = () => {
     return (
       <Box style={{ display: "block", width: "100%" }}>
-        <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
-          Artistic Works <hr style={{ width: "70%", color: "lightgray" }} />
-        </Typography>
+          <Typography variant="h4" component={"div"} style={{ margin: "1rem" }}>
+            Artistic Works 
+          <IconButton color='success'aria-label="addWork" size="large" style={{ float: "right" }}  ><AddCircleOutlineIcon fontSize="inherit" /></IconButton>
+            <hr style={{ width: "70%", color: "lightgray" }} />
+          </Typography>
 
         <Box
           style={{
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -1223,10 +1286,42 @@ export function AccountArtist() {
       </Box>
     );
   };
+
+const listOptions =[
+  {
+    text: "Profile",
+    icon: <AccountBoxIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Tickets",
+    icon: <ConfirmationNumberIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Favorites",
+    icon: <FavoriteIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "History of Events",
+    icon: <HistoryIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Artistic Works",
+    icon: <PaletteIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Attended Events",
+    icon: <CalendarViewDayIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Request Participation",
+    icon: <ForwardToInboxIcon style={{ color: "white" }} />,
+  },
+];
+const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{display: isMobile ? "block" :"flex"  }}>
       <CssBaseline />
-      <Drawer
+     {isMobile?( <AccountMenu currentSection={currentSection}  listOptions={listOptions}/>): (<Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -1291,8 +1386,7 @@ export function AccountArtist() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
-      <Toolbar />
+      </Drawer>)}
       {renderSection()}
     </Box>
   );
@@ -1328,7 +1422,7 @@ export function AccountAdmin() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -1352,7 +1446,7 @@ export function AccountAdmin() {
             margin: "1rem",
             border: "groove 1px gray",
             borderRadius: "10px",
-            height: "80vh",
+            height: "70vh",
             padding: "2rem",
             textAlign: "left",
             overflowX: "scroll",
@@ -1481,10 +1575,26 @@ export function AccountAdmin() {
       </Box>
     );
   };
+
+const listOptions = [
+  {
+    text: "Profile",
+    icon: <AccountBoxIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Incoming Requests",
+    icon: <InsertDriveFileIcon style={{ color: "white" }} />,
+  },
+  {
+    text: "Support",
+    icon: <HelpOutlineIcon style={{ color: "white" }} />,
+  },
+];
+const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{display: isMobile ? "block" :"flex"  }}>
       <CssBaseline />
-      <Drawer
+     {isMobile? <AccountMenu currentSection={currentSection}  setCurrentSection={setCurrentSection} listOptions={listOptions}/>: <Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -1533,8 +1643,7 @@ export function AccountAdmin() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
-      <Toolbar />
+      </Drawer>}
       {renderSection()}
     </Box>
   );

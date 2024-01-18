@@ -16,6 +16,7 @@ import { Link } from "react-router-dom/";
 function ResponsiveAppBar() {
   const [isAuth, setIsAuth] = React.useState(true);
 
+  
   const pages = [{ name: "Home" }, { name: "Events" }, { name: "Contacts" }];
 
   const logins = [
@@ -147,7 +148,7 @@ function ResponsiveAppBar() {
           </Box>
 
           {isAuth ? (
-            <Link
+           <Link
               style={{ textDecoration: "none" }}
               to={`/Account`}
               key={"Account"}

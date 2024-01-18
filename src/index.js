@@ -85,7 +85,7 @@ export default function App() {
           mostrare una section diversa
           Passaggi: fai il login, identifica il ruolo dell'utente, metti il ruolo dell'utente nei parametri
           */}
-          <Route path="/Account" element={renderSection("artist")} />
+          <Route path="/Account" element={renderSection("promoter")} />
 
           <Route path="*" element={<NoPage />} />
         </Route>
